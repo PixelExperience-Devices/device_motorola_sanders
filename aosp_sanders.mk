@@ -42,3 +42,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 BUILD_FINGERPRINT := motorola/sanders/sanders:8.1.0/OPS28.65-36/9fea:user/release-keys
+
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
