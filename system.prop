@@ -56,7 +56,6 @@ camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 camera.mot.startup_probing=0
 persist.camera.debug.logfile=0
 persist.camera.gyro.disable=0
-debug.camera.control_pdaf=on
 
 persist.camera.pdaf_logging=1
 persist.camera.stats.TuningDbg=1
