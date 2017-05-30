@@ -76,8 +76,8 @@
   "ZAF_PDAF_PARAM_CONF_SCALE":              1.0,
   "ZAF_PDAF_PARAM_CONF_RANGE_EXPAND":       true,
 
-  "ZAF_PDAF_PARAM_CONF_HIGH_TH":            140.0,
-  "ZAF_PDAF_PARAM_CONF_LOW_TH":             70.0,
+  "ZAF_PDAF_PARAM_CONF_HIGH_TH":            160.0,
+  "ZAF_PDAF_PARAM_CONF_LOW_TH":             130.0,
   "ZAF_PDAF_PARAM_CONF_MIN_LP":             115,
   "ZAF_PDAF_PARAM_CONF_MAX_LP":             884,
   "ZAF_PDAF_PARAM_ROI_SML":                 16,
@@ -94,8 +94,8 @@
   "ZAF_PDAF_PARAM_WGHT_TTF_ROI_ATW":        0.5,
 
   "ZAF_PDAF_PARAM_HIGHGAIN_DISABLE":        false,
-  "ZAF_PDAF_PARAM_HIGHGAIN_ENTER":          12.0,
-  "ZAF_PDAF_PARAM_HIGHGAIN_EXIT":           9.0,
+  "ZAF_PDAF_PARAM_HIGHGAIN_ENTER":          20.0,
+  "ZAF_PDAF_PARAM_HIGHGAIN_EXIT":           16.0,
 
   "ZAF_PDAF_OSC_DTC_ENABLE":                true,
   "ZAF_PDAF_OSC_DTC_RATH_TH":               1.0,
