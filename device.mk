@@ -260,6 +260,7 @@ PRODUCT_COPY_FILES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
+    libshim_ril \
     libxml2
 
 # Sensors
