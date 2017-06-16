@@ -68,7 +68,7 @@ void vendor_load_properties()
         return;
 
     std::string sku = property_get("ro.boot.hardware.sku");
-    property_set("ro.product.model", sku.c_str());
+    property_override("ro.product.model", sku.c_str());
 
     // rmt_storage
     std::string device = property_get("ro.boot.device");
