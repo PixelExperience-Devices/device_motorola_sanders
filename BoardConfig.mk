@@ -50,6 +50,11 @@ TARGET_USES_64_BIT_BINDER := true
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := sanders,sanders_retail
 
+# Enable dexpreopt to speed boot time
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+WITH_DEXPREOPT := true
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
@@ -148,9 +153,6 @@ BOARD_NO_CHARGER_LED := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-
-# Enable dexpreopt to speed boot time
-WITH_DEXPREOPT := true
 
 # Display
 BOARD_USES_ADRENO := true
