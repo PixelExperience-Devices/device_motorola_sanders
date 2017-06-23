@@ -40,7 +40,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.playback.mch.downsample=true \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
-    vendor.use.voice.path.for.pcm.voip=false
+    vendor.use.voice.path.for.pcm.voip=false \
+    ro.config.media_vol_steps=25
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
