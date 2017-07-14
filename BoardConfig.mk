@@ -88,7 +88,6 @@ BOARD_NO_CHARGER_LED := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
