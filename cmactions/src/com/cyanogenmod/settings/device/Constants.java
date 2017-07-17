@@ -32,9 +32,11 @@ public class Constants {
 
     // Swap keys
     public static final String FP_HOME_KEY = "fp_home";
+    public static final String FP_HOME_KEY_OFF = "fp_home_scr_off";
 
     // Swap nodes
     public static final String FP_HOME_NODE = "/sys/homebutton/enable";
+    public static final String FP_HOME_OFF_NODE = "/sys/homebutton/enable_off";
 
     // Haptic node
     public static final String FP_HAPTIC_NODE = "/sys/homebutton/haptic";
@@ -45,6 +47,11 @@ public class Constants {
     public static final String FP_KEY_HOLD = "fp_key_hold";
     public static final String FP_KEY_LEFT = "fp_key_left";
     public static final String FP_KEY_RIGHT = "fp_key_right";
+
+    public static final String FP_KEYS_OFF = "fp_keys_off";
+    public static final String FP_KEY_HOLD_OFF = "fp_key_hold_off";
+    public static final String FP_KEY_LEFT_OFF = "fp_key_left_off";
+    public static final String FP_KEY_RIGHT_OFF = "fp_key_right_off";
 
     // Keys nodes
     public static final String FP_KEYS_NODE = "/sys/homebutton/key";
@@ -60,6 +67,7 @@ public class Constants {
 
     public static final String[] sButtonPrefKeys = {
         FP_HOME_KEY,
+        FP_HOME_KEY_OFF,
         FP_KEYS,
         FP_KEY_HOLD,
         FP_KEY_RIGHT,
@@ -67,18 +75,36 @@ public class Constants {
         FP_HAPTIC_KEY,
     };
 
+    public static final String[] sButtonScreenOffPrefKeys = {
+        FP_KEYS_OFF,
+        FP_KEY_HOLD_OFF,
+        FP_KEY_RIGHT_OFF,
+        FP_KEY_LEFT_OFF,
+        FP_HOME_KEY_OFF,
+    };
+
     static {
         sBooleanNodePreferenceMap.put(FP_HOME_KEY, FP_HOME_NODE);
+        sBooleanNodePreferenceMap.put(FP_HOME_KEY_OFF, FP_HOME_OFF_NODE);
         sBooleanNodePreferenceMap.put(FP_KEYS, FP_KEYS_NODE);
         sBooleanNodePreferenceMap.put(FP_KEY_HOLD, FP_KEY_HOLD_NODE);
         sBooleanNodePreferenceMap.put(FP_KEY_LEFT, FP_KEY_LEFT_NODE);
         sBooleanNodePreferenceMap.put(FP_KEY_RIGHT, FP_KEY_RIGHT_NODE);
         sBooleanNodePreferenceMap.put(FP_HAPTIC_KEY, FP_HAPTIC_NODE);
+        sBooleanNodePreferenceMap.put(FP_KEYS_OFF, FP_KEYS_NODE);
+        sBooleanNodePreferenceMap.put(FP_KEY_HOLD_OFF, FP_KEY_HOLD_NODE);
+        sBooleanNodePreferenceMap.put(FP_KEY_LEFT_OFF, FP_KEY_LEFT_NODE);
+        sBooleanNodePreferenceMap.put(FP_KEY_RIGHT_OFF, FP_KEY_RIGHT_NODE);
         sNodeDefaultMap.put(FP_HOME_KEY, false);
+        sNodeDefaultMap.put(FP_HOME_KEY_OFF, false);
         sNodeDefaultMap.put(FP_KEYS, "0");
         sNodeDefaultMap.put(FP_KEY_HOLD, "0");
         sNodeDefaultMap.put(FP_KEY_LEFT, "0");
         sNodeDefaultMap.put(FP_KEY_RIGHT, "0");
+        sNodeDefaultMap.put(FP_KEYS_OFF, "0");
+        sNodeDefaultMap.put(FP_KEY_HOLD_OFF, "0");
+        sNodeDefaultMap.put(FP_KEY_LEFT_OFF, "0");
+        sNodeDefaultMap.put(FP_KEY_RIGHT_OFF, "0");
         sNodeDefaultMap.put(FP_HAPTIC_KEY, false);
     }
 
@@ -96,7 +122,8 @@ public class Constants {
 
         String value = "1";
         Log.e(TAG, "Write Pref: " + pref);
-        if (!pref.equals(FP_KEYS) && !pref.equals(FP_KEY_HOLD) && !pref.equals(FP_KEY_LEFT) && !pref.equals(FP_KEY_RIGHT))
+        if (!pref.equals(FP_KEYS) && !pref.equals(FP_KEY_HOLD) && !pref.equals(FP_KEY_LEFT) && !pref.equals(FP_KEY_RIGHT) &&
+            !pref.equals(FP_KEYS_OFF) && !pref.equals(FP_KEY_HOLD_OFF) && !pref.equals(FP_KEY_LEFT_OFF) && !pref.equals(FP_KEY_RIGHT_OFF))
             value = isPreferenceEnabled(context, pref) ? "1" : "0";
         else
             value = GetPreference(context, pref);
