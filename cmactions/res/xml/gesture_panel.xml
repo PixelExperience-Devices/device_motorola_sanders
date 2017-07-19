@@ -85,7 +85,7 @@
         <ListPreference
             android:dependency="fp_home"
             android:title="Fingerprint Tap"
-            android:summary="Select action for single tap"
+            android:summary="%s"
             android:dialogTitle="Select action for single tap"
             android:key="fp_keys"
             android:defaultValue="0"
@@ -95,7 +95,7 @@
         <ListPreference
             android:dependency="fp_home"
             android:title="Fingerprint Long Press"
-            android:summary="Select action for long press"
+            android:summary="%s"
             android:dialogTitle="Select action for long press"
             android:key="fp_key_hold"
             android:defaultValue="0"
@@ -105,7 +105,7 @@
         <ListPreference
             android:dependency="fp_home"
             android:title="Fingerprint Swipe Left"
-            android:summary="Select action for swipe left"
+            android:summary="%s"
             android:dialogTitle="Select action for swipe left"
             android:key="fp_key_left"
             android:defaultValue="0"
@@ -115,7 +115,7 @@
         <ListPreference
             android:dependency="fp_home"
             android:title="Fingerprint Swipe Right"
-            android:summary="Select action for swipe right"
+            android:summary="%s"
             android:dialogTitle="Select action for swipe right"
             android:key="fp_key_right"
             android:defaultValue="0"
@@ -130,7 +130,7 @@
         <ListPreference
             android:dependency="fp_home_scr_off"
             android:title="Fingerprint Tap"
-            android:summary="Select action for single tap"
+            android:summary="%s"
             android:dialogTitle="Select action for single tap"
             android:key="fp_keys_off"
             android:defaultValue="0"
@@ -140,7 +140,7 @@
         <ListPreference
             android:dependency="fp_home_scr_off"
             android:title="Fingerprint Long Press"
-            android:summary="Select action for long press"
+            android:summary="%s"
             android:dialogTitle="Select action for long press"
             android:key="fp_key_hold_off"
             android:defaultValue="0"
@@ -150,7 +150,7 @@
         <ListPreference
             android:dependency="fp_home_scr_off"
             android:title="Fingerprint Swipe Left"
-            android:summary="Select action for swipe left"
+            android:summary="%s"
             android:dialogTitle="Select action for swipe left"
             android:key="fp_key_left_off"
             android:defaultValue="0"
@@ -160,7 +160,7 @@
         <ListPreference
             android:dependency="fp_home_scr_off"
             android:title="Fingerprint Swipe Right"
-            android:summary="Select action for swipe right"
+            android:summary="%s"
             android:dialogTitle="Select action for swipe right"
             android:key="fp_key_right_off"
             android:defaultValue="0"
