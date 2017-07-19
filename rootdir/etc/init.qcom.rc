@@ -202,6 +202,10 @@ on boot
     chown system system /sys/homebutton/key_left
     chown system system /sys/homebutton/key_right
 
+    # Wake Gestures
+    chown system radio /sys/android_touch/doubletap2wake
+    chmod 0660 /sys/android_touch/doubletap2wake
+
     # Display
     chown system graphics /sys/class/graphics/fb1/hpd
     chmod 0664 /sys/class/graphics/fb1/hpd

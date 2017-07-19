@@ -88,6 +88,7 @@ BOARD_NO_CHARGER_LED := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
+TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # Crypto
