@@ -191,11 +191,6 @@ PRODUCT_PACKAGES += \
     libloc_api-rpc-qc \
     libshims_get_process_name
 
-# HIDL
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
-
 # IMS
 PRODUCT_PACKAGES += \
     libshim_ims
