@@ -9,6 +9,8 @@ allow system_app fuse_device:filesystem getattr;
 
 allow system_app init:unix_stream_socket { read write };
 allow system_app sysfs_homebutton:file write;
+allow system_app sysfs_screen_off_gestures:file write;
+allow system_app sysfs_fpc_proximity:file { rw_file_perms }; 
 
 get_prop(system_app, diag_prop);
 binder_call(system_app, qtitetherservice_service);
