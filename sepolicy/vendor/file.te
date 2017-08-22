@@ -47,3 +47,4 @@ type proc_touchpanel, fs_type;
 
 type camera_socket, file_type, data_file_type, core_data_file_type;
 type sysfs_screen_off_gestures, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_fpc_proximity, sysfs_type, fs_type;
