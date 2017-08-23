@@ -220,7 +220,8 @@ PRODUCT_PACKAGES += \
     nfc_nci.pn54x.default \
     NfcNci \
     Tag \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    android.hardware.nfc@1.0-impl
 
 # OMX
 PRODUCT_PACKAGES += \
