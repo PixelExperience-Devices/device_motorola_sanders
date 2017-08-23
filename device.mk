@@ -222,7 +222,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
-    nfc_nci.pn54x.default \
+    nfc_nci.msm8953 \
     NfcNci \
     Tag \
     com.android.nfc_extras \
