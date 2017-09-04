@@ -138,11 +138,6 @@ TARGET_PER_MGR_ENABLED := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
-BOARD_PROVIDES_RILD := true
-
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
