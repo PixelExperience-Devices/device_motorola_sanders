@@ -35,9 +35,6 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-namespace android {
-namespace init {
-
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
@@ -70,7 +67,7 @@ void vendor_load_properties()
         return;
 
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_override("ro.product.model", sku.c_str());
+    property_set("ro.product.model", sku.c_str());
 
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
@@ -93,7 +90,4 @@ void vendor_load_properties()
     if (sku == "XT1683") {
         property_set("ro.hw.dtv", "true");
     }
-}
-
-}
 }
