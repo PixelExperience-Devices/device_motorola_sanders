@@ -383,11 +383,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini
 
-# ZAF
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/zaf/zaf_mot_imx362.json:system/etc/zaf/zaf_mot_imx362.json \
-    $(LOCAL_PATH)/configs/zaf/zaf_mot_s5k2l7.json:system/etc/zaf/zaf_mot_s5k2l7.json
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
