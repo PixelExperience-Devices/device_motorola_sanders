@@ -231,8 +231,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/qdcm_calib_data_mipi_mot_vid_boe_1080p_520.xml:system/etc/qdcm_calib_data_mipi_mot_vid_boe_1080p_520.xml \
-    $(LOCAL_PATH)/configs/qdcm_calib_data_mipi_mot_vid_tianma_1080p_520.xml:system/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_520.xml
+    $(LOCAL_PATH)/configs/qdcm_calib_data_mipi_mot_vid_djn_1080p_550.xml:system/etc/qdcm_calib_data_mipi_mot_vid_djn_1080p_550.xml \
+    $(LOCAL_PATH)/configs/qdcm_calib_data_mipi_mot_vid_tianma_1080p_550.xml:system/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_550.xml
 
 # Media
 PRODUCT_PACKAGES += \
