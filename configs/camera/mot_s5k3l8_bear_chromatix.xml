@@ -79,56 +79,57 @@ special_mode_mask values:
 <ChromatixConfigurationRoot>
   <CommonChromatixInfo>
     <ChromatixName special_mode_mask="0">
-      <ISPCommon>mot_s5k2l7sa_common</ISPCommon>
-      <PostProc>mot_s5k2l7sa_postproc</PostProc>
+      <ISPCommon>mot_s5k3l8_bear_common</ISPCommon>
+      <PostProc>mot_s5k3l8_bear_postproc</PostProc>
     </ChromatixName>
-    <ChromatixName special_mode_mask="MOT_4K_VIDEO">
-      <ISPVideo>mot_s5k2l7sa_video_4k</ISPVideo>
-      <CPPVideo>mot_s5k2l7sa_cpp_video_4k</CPPVideo>
-      <A3Video>mot_s5k2l7sa_4k_video_3a</A3Video>
-    </ChromatixName>
-    <ChromatixName special_mode_mask="MOT_ALTM_IHDR_VIDEO">
-      <ISPVideo>mot_s5k2l7sa_ihdr_video</ISPVideo>
-      <A3Video>mot_s5k2l7sa_ihdr_video_3a</A3Video>
-    </ChromatixName>
-    <ChromatixName special_mode_mask="MOT_4K_IHDR_VIDEO">
-      <ISPVideo>mot_s5k2l7sa_ihdr_video_4k</ISPVideo>
-      <A3Video>mot_s5k2l7sa_4k_ihdr_video_3a</A3Video>
+    <ChromatixName special_mode_mask="MOT_CPP_CUSTOM">
+      <CPPSnapshot>mot_s5k3l8_bear_cpp_snapshot_custom</CPPSnapshot>
     </ChromatixName>
   </CommonChromatixInfo>
   <ResolutionChromatixInfo>
     <ChromatixName sensor_resolution_index="0" special_mode_mask="0">
-      <ISPPreview>mot_s5k2l7sa_snapshot</ISPPreview>
-      <ISPSnapshot>mot_s5k2l7sa_snapshot</ISPSnapshot>
-      <ISPVideo>mot_s5k2l7sa_default_video</ISPVideo>
-      <CPPPreview>mot_s5k2l7sa_cpp_preview</CPPPreview>
-      <CPPSnapshot>mot_s5k2l7sa_cpp_snapshot</CPPSnapshot>
-      <CPPVideo>mot_s5k2l7sa_cpp_video</CPPVideo>
-      <CPPLiveshot>mot_s5k2l7sa_cpp_liveshot</CPPLiveshot>
-      <A3Preview>mot_s5k2l7sa_fullsize_preview_3a</A3Preview>
-      <A3Video>mot_s5k2l7sa_fullsize_video_3a</A3Video>
+      <ISPPreview>mot_s5k3l8_bear_snapshot</ISPPreview>
+      <ISPSnapshot>mot_s5k3l8_bear_snapshot</ISPSnapshot>
+      <ISPVideo>mot_s5k3l8_bear_snapshot</ISPVideo>
+      <CPPPreview>mot_s5k3l8_bear_cpp_preview</CPPPreview>
+      <CPPSnapshot>mot_s5k3l8_bear_cpp_snapshot</CPPSnapshot>
+      <CPPVideo>mot_s5k3l8_bear_cpp_video</CPPVideo>
+      <CPPLiveshot>mot_s5k3l8_bear_cpp_liveshot</CPPLiveshot>
+      <A3Preview>mot_s5k3l8_bear_zsl_preview_3a</A3Preview>
+      <A3Video>mot_s5k3l8_bear_zsl_video_3a</A3Video>
     </ChromatixName>
     <ChromatixName sensor_resolution_index="1" special_mode_mask="0">
-      <ISPPreview>mot_s5k2l7sa_hfr_60</ISPPreview>
-      <ISPSnapshot>mot_s5k2l7sa_hfr_60</ISPSnapshot>
-      <ISPVideo>mot_s5k2l7sa_hfr_60</ISPVideo>
-      <CPPPreview>mot_s5k2l7sa_cpp_hfr_60</CPPPreview>
-      <CPPSnapshot>mot_s5k2l7sa_cpp_hfr_60</CPPSnapshot>
-      <CPPVideo>mot_s5k2l7sa_cpp_hfr_60</CPPVideo>
-      <CPPLiveshot>mot_s5k2l7sa_cpp_hfr_60</CPPLiveshot>
-      <A3Preview>mot_s5k2l7sa_hfr_60_3a</A3Preview>
-      <A3Video>mot_s5k2l7sa_hfr_60_3a</A3Video>
+      <ISPPreview>mot_s5k3l8_bear_preview</ISPPreview>
+      <ISPSnapshot>mot_s5k3l8_bear_preview</ISPSnapshot>
+      <ISPVideo>mot_s5k3l8_bear_preview</ISPVideo>
+      <CPPPreview>mot_s5k3l8_bear_cpp_preview</CPPPreview>
+      <CPPSnapshot>mot_s5k3l8_bear_cpp_snapshot</CPPSnapshot>
+      <CPPVideo>mot_s5k3l8_bear_cpp_video</CPPVideo>
+      <CPPLiveshot>mot_s5k3l8_bear_cpp_liveshot</CPPLiveshot>
+      <A3Preview>mot_s5k3l8_bear_default_preview_3a</A3Preview>
+      <A3Video>mot_s5k3l8_bear_default_video_3a</A3Video>
     </ChromatixName>
     <ChromatixName sensor_resolution_index="2" special_mode_mask="0">
-      <ISPPreview>mot_s5k2l7sa_hfr_120</ISPPreview>
-      <ISPSnapshot>mot_s5k2l7sa_hfr_120</ISPSnapshot>
-      <ISPVideo>mot_s5k2l7sa_hfr_120</ISPVideo>
-      <CPPPreview>mot_s5k2l7sa_cpp_hfr_120</CPPPreview>
-      <CPPSnapshot>mot_s5k2l7sa_cpp_hfr_120</CPPSnapshot>
-      <CPPVideo>mot_s5k2l7sa_cpp_hfr_120</CPPVideo>
-      <CPPLiveshot>mot_s5k2l7sa_cpp_hfr_120</CPPLiveshot>
-      <A3Preview>mot_s5k2l7sa_hfr_120_3a</A3Preview>
-      <A3Video>mot_s5k2l7sa_hfr_120_3a</A3Video>
+      <ISPPreview>mot_s5k3l8_bear_hfr_60</ISPPreview>
+      <ISPSnapshot>mot_s5k3l8_bear_hfr_60</ISPSnapshot>
+      <ISPVideo>mot_s5k3l8_bear_hfr_60</ISPVideo>
+      <CPPPreview>mot_s5k3l8_bear_cpp_hfr_60</CPPPreview>
+      <CPPSnapshot>mot_s5k3l8_bear_cpp_hfr_60</CPPSnapshot>
+      <CPPVideo>mot_s5k3l8_bear_cpp_hfr_60</CPPVideo>
+      <CPPLiveshot>mot_s5k3l8_bear_cpp_hfr_60</CPPLiveshot>
+      <A3Preview>mot_s5k3l8_bear_hfr_60_3a</A3Preview>
+      <A3Video>mot_s5k3l8_bear_hfr_60_3a</A3Video>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="3" special_mode_mask="0">
+      <ISPPreview>mot_s5k3l8_bear_hfr_120</ISPPreview>
+      <ISPSnapshot>mot_s5k3l8_bear_hfr_120</ISPSnapshot>
+      <ISPVideo>mot_s5k3l8_bear_hfr_120</ISPVideo>
+      <CPPPreview>mot_s5k3l8_bear_cpp_hfr_120</CPPPreview>
+      <CPPSnapshot>mot_s5k3l8_bear_cpp_hfr_120</CPPSnapshot>
+      <CPPVideo>mot_s5k3l8_bear_cpp_hfr_120</CPPVideo>
+      <CPPLiveshot>mot_s5k3l8_bear_cpp_hfr_120</CPPLiveshot>
+      <A3Preview>mot_s5k3l8_bear_hfr_120_3a</A3Preview>
+      <A3Video>mot_s5k3l8_bear_hfr_120_3a</A3Video>
     </ChromatixName>
   </ResolutionChromatixInfo>
 </ChromatixConfigurationRoot>
