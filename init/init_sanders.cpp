@@ -77,17 +77,4 @@ void vendor_load_properties()
     property_set("ro.hw.fps", "true");
 
     num_sims();
-
-    if (sku == "XT1687") {
-        property_set("ro.hw.ecompass", "true");
-        property_set("ro.hw.nfc", "false");
-    }
-    else {
-        property_set("ro.hw.ecompass", "false");
-        property_set("ro.hw.nfc", "true");
-    }
-
-    if (sku == "XT1683") {
-        property_set("ro.hw.dtv", "true");
-    }
 }
