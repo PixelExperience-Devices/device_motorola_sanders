@@ -219,6 +219,9 @@ persist.data.iwlan.enable=true
 
 ro.sys.sdcardfs=false
 
+# Sensors
+ro.hardware.sensors=sanders
+
 # USB
 ro.usb.mtp=0x2e82
 ro.usb.mtp_adb=0x2e76
