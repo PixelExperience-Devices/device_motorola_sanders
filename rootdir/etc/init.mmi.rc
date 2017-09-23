@@ -34,6 +34,7 @@ on post-fs
     mkdir /persist/public 0755 mot_tcmd mot_tcmd
     mkdir /persist/public/atvc 0770 mot_atvc shell
     mkdir /persist/public/battd 0755 mot_accy mot_tcmd
+    mkdir /persist/public/att_dm 0775 radio mot_tcmd
     mkdir /persist/public/hiddenmenu 0755 radio radio
     mkdir /persist/public/hiddenmenu/data 0775 system mot_tcmd
     mkdir /persist/public/locale 0700 system system
@@ -42,6 +43,8 @@ on post-fs
     mkdir /persist/wifi 0755 mot_tcmd mot_tcmd
     mkdir /persist/bt 0755 mot_tcmd bluetooth
     mkdir /persist/wmdrm 0775 mot_drm mot_drm
+    mkdir /persist/public/usc_dm 0775 radio radio
+    mkdir /persist/sds 0700 vold vold
 
     chown mot_tcmd mot_tcmd /persist/factory/fti
     chmod 0660 /persist/factory/fti
@@ -51,13 +54,16 @@ on post-fs
     chown mot_tcmd mot_tcmd /persist/bt/bt_bdaddr
     chmod 0664 /persist/bt/bt_bdaddr
 
+    # Set life_calls and life_timer file permissions
+    chown radio mot_tcmd /persist/public/hiddenmenu/life_calls
+    chmod 0775 /persist/public/hiddenmenu/life_calls
+    chown radio mot_tcmd /persist/public/hiddenmenu/life_timer
+    chmod 0775 /persist/public/hiddenmenu/life_timer
+
     swapon_all fstab.qcom
     write /proc/sys/vm/page-cluster 0
 
 on post-fs-data
-    # AK09912 calibration file directory
-    mkdir /data/misc/akmd 0770 system compass
-
     #setup folder for WLAN WAPI
     chmod 0770 /data/wapi_certificate
 	
@@ -159,28 +165,18 @@ on boot
    # restore default_message_loglevel to KERN_WARNING
    write /proc/sys/kernel/printk "7 4 1 7"
 
-   # STML0 driver parameter permissions
-   chown root mot_tcmd /sys/module/stml0xx/parameters/irq_disable
-   chmod 0660 /sys/module/stml0xx/parameters/irq_disable
-
    chown root mot_tcmd /sys/module/phy_msm_usb/parameters/host_mode_disable
    chmod 0660 /sys/module/phy_msm_usb/parameters/host_mode_disable
    chown root mot_tcmd /sys/devices/soc/7000000.ssusb/disable_id_pin
    chmod 0220 /sys/devices/soc/7000000.ssusb/disable_id_pin
     
-   # change permission for capsensor
-   chmod 0660 /sys/class/capsense/enable
-   chown system system sys/class/capsense/enable
-
-   #STML0 device permissions
-   chown system compass /dev/stml0xx
-   chmod 0660 /dev/stml0xx
-   chown compass compass /dev/stml0xx_as
-   chmod 0660 /dev/stml0xx_as
-   chown compass compass /dev/stml0xx_ms
-   chmod 0660 /dev/stml0xx_ms
-   chown compass compass /dev/stml0xx_akm
-   chmod 0660 /dev/stml0xx_akm
+   #change ownership and permission for LTR559
+   chown system system /sys/class/sensors/Rear\ Proximity\ sensor/enable
+   chown system system /sys/class/sensors/Rear\ Proximity\ sensor/poll_delay
+   chown system system /sys/class/sensors/Rear\ Proximity\ sensor/enable_wakeup
+   chmod 0660 /sys/class/sensors/Rear\ Proximity\ sensor/enable
+   chmod 0660 /sys/class/sensors/Rear\ Proximity\ sensor/poll_delay
+   chmod 0660 /sys/class/sensors/Rear\ Proximity\ sensor/enable_wakeup
 
    # Change permission for type C params
    chown root mot_tcmd /sys/devices/soc/78b6000.i2c/i2c-2/2-0022/CC_state
@@ -219,39 +215,9 @@ on boot
    chown system system /sys/class/timed_output/vibrator/enable
    chmod 0660 /sys/class/timed_output/vibrator/enable
 
-   # Change ownership and permission for laser_sensor
-   chown system system /sys/kernel/range/enable_sar
-   chmod 0660 /sys/kernel/range/enable_sar
-   chown system system /sys/kernel/range/set_delay_ms
-   chmod 0660 /sys/kernel/range/set_delay_ms
-   chown system system /sys/kernel/range/near
-   chmod 0660 /sys/kernel/range/near
-
-# Change ownership and permission for rear_sensor
-   chown system system /sys/class/i2c-dev/i2c-2/device/2-0049/enable_sar
-   chmod 0660 /sys/class/i2c-dev/i2c-2/device/2-0049/enable_sar
-   chown system system /sys/class/i2c-dev/i2c-2/device/2-0049/set_delay_ms
-   chmod 0660 /sys/class/i2c-dev/i2c-2/device/2-0049/set_delay_ms
-   chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/enable_sar
-   chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/enable_sar
-   chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
-   chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
-
-# Change the ownership of display TE files for tcmds
    chown root mot_tcmd /sys/class/graphics/fb0/te_enable
    chown root mot_tcmd /sys/class/graphics/fb0/frame_counter
 
-
-# FPC device parameter permissions
-   chown system mot_tcmd /sys/bus/spi/devices/spi12.0/nav
-   chown system mot_tcmd /sys/bus/spi/devices/spi12.0/clk_enable
-   chown system mot_tcmd /sys/bus/spi/devices/spi12.0/dev_enable
-   chown system mot_tcmd /sys/bus/spi/devices/spi12.0/irq
-   chown system mot_tcmd /sys/bus/spi/devices/spi12.0/irq_cnt
-   chmod 0440 /sys/bus/spi/devices/spi12.0/irq_cnt
-
-# Change ownership of aov related sysfs entries
-   wait /sys/kernel/aov/event
    chown audio audio /sys/kernel/aov/trigger
    chown audio audio /sys/kernel/aov/register
    chown audio audio /sys/kernel/aov/event
@@ -314,11 +280,6 @@ service mmi-boot-sh /system/bin/init.mmi.boot.sh
     user root
     oneshot
 
-service mmi-laser-sh /system/bin/init.mmi.laser.sh
-    class core
-    user root
-    oneshot
-
 service mmi-touch-sh /system/bin/init.mmi.touch.sh
     class core
     user root
@@ -329,12 +290,11 @@ service oem-hw-sh /system/bin/init.oem.hw.sh
     user root
     oneshot
 
-# Start Sensor daemon
-service motosh /system/bin/motosh boot
-    class main
-    user compass
-    group compass misc input
-    oneshot
+# Sanders uses qcom sensor service
+service sensors /system/bin/sensors.qcom
+    class core
+    user root
+    group root
 
 service thermal-com /system/vendor/bin/thermal-engine --minimode
     class main
@@ -348,6 +308,7 @@ on property:sys.wifi.tethering=true
     write /sys/class/net/wlan0/queues/rx-1/rps_cpus ${sys.usb.rps_mask}
     write /sys/class/net/wlan0/queues/rx-2/rps_cpus ${sys.usb.rps_mask}
     write /sys/class/net/wlan0/queues/rx-3/rps_cpus ${sys.usb.rps_mask}
+    write /sys/class/net/wlan0/queues/rx-4/rps_cpus ${sys.usb.rps_mask}
 
 on property:sys.wifi.tethering=false
     write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${sys.rmnet_vnd.rps_mask}

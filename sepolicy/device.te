@@ -5,7 +5,6 @@ type haptics_device, dev_type;
 type hob_device, dev_type;
 type hw_block_device, dev_type;
 type graphics_fb_device, dev_type;
-type laser_device, dev_type;
 type synaptics_rmi_device, dev_type;
 type shwi_device, dev_type;
 type isdbt_device, dev_type;
