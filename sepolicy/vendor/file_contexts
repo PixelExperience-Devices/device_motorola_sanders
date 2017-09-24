@@ -128,3 +128,7 @@
 # Fingerprint custom hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service_32 u:object_r:hal_fingerprint_default_exec:s0
 
+# Light HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.sanders                                     u:object_r:hal_light_default_exec:s0
+/sys/devices/soc/1a00000.qcom,mdss_mdp/1a00000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight/brightness	   u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-atc-20/leds/charging/brightness	                                                           u:object_r:sysfs_leds:s0
