@@ -200,7 +200,7 @@
     <bool name="config_intrusiveBatteryLed">true</bool>
 
     <!-- Default color for notification LED is white. -->
-    <color name="config_defaultNotificationColor">#ffffffff</color>
+    <color name="config_defaultNotificationColor">#ff0000ff</color>
 
     <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors
