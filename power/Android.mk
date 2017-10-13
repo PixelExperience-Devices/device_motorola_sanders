@@ -1,8 +1,8 @@
 LOCAL_PATH := $(call my-dir)
 
-USE_ME := true
+SANDERS_USE_ME := true
 
-ifneq (,$(filter true,$(USE_ME) $(WITH_QC_PERF)))
+ifneq (,$(filter true,$(SANDERS_USE_ME) $(WITH_QC_PERF)))
 
 # HAL module implemenation stored in
 # hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
