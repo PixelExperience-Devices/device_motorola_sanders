@@ -30,7 +30,6 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -88,10 +87,10 @@ public class KeyHandler implements DeviceKeyHandler {
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
             .build();
+    private static final long[] LONG_PRESS_VIBRATION_PATTERN = new long[] {0, 25, 10};
     private final Context mContext;
     private final PowerManager mPowerManager;
     private final NotificationManager mNotificationManager;
-    public boolean mIsHapticFeedbackEnabledOnSystem;
     WakeLock mProximityWakeLock;
     WakeLock mGestureWakeLock;
     private KeyguardManager mKeyguardManager;
@@ -109,7 +108,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private int fpTapCounts = 0;
     private boolean fpTapPending = false;
     private boolean fpGesturePending = false;
-    private SettingsObserver mSettingsObserver;
     private Runnable doubleTapRunnable = new Runnable() {
         public void run() {
             int action = 0;
@@ -124,7 +122,7 @@ public class KeyHandler implements DeviceKeyHandler {
             if (action != 0) {
                 boolean isActionSupported = ArrayUtils.contains(mPowerManager.isScreenOn() ? sFPSupportedActions : sFPSupportedActionsScreenOff, action);
                 if (isActionSupported) {
-                    fireFPAction(action, false);
+                    fireFPAction(action, true);
                 }
             }
             resetDoubleTapOnFP();
@@ -138,9 +136,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyHandler(Context context) {
         mContext = context;
-
-        mSettingsObserver = new SettingsObserver(new Handler());
-        mSettingsObserver.observe();
 
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mNotificationManager
@@ -246,11 +241,6 @@ public class KeyHandler implements DeviceKeyHandler {
         final PackageManager pm = context.getPackageManager();
         final ResolveInfo launcherInfo = pm.resolveActivity(launcherIntent, 0);
         return launcherInfo.activityInfo.packageName;
-    }
-
-    private void setHapticFeedbackEnabledOnSystem(boolean enabled) {
-        Settings.System.putIntForUser(mContext.getContentResolver(),
-                Settings.System.HAPTIC_FEEDBACK_ENABLED, enabled ? 1 : 0, UserHandle.USER_CURRENT);
     }
 
     private String getRearCameraId() {
@@ -536,14 +526,14 @@ public class KeyHandler implements DeviceKeyHandler {
         }
         boolean isActionSupported = ArrayUtils.contains(isScreenOn ? sFPSupportedActions : sFPSupportedActionsScreenOff, action);
         if (isActionSupported) {
-            fireFPAction(action, true);
+            fireFPAction(action, false);
         }
     }
 
-    private void fireFPAction(int action, boolean haptic) {
+    private void fireFPAction(int action, boolean isDoubleTap) {
         ensureKeyguardManager();
         boolean isHapticFeedbackEnabledOnFP = isHapticFeedbackEnabledOnFP();
-        if (!haptic) {
+        if (isDoubleTap && action != ACTION_CAMERA && action != ACTION_FLASHLIGHT) {
             isHapticFeedbackEnabledOnFP = false;
         }
         if (isHapticFeedbackEnabledOnFP && (action == ACTION_CAMERA || action == ACTION_FLASHLIGHT)) {
@@ -650,16 +640,12 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private void triggerVirtualKeypress(final Handler handler, final int keyCode) {
-        final boolean mIsHapticFeedbackEnabledOnSystem_ = mIsHapticFeedbackEnabledOnSystem;
-        if (mIsHapticFeedbackEnabledOnSystem_) {
-            setHapticFeedbackEnabledOnSystem(false);
-        }
         final InputManager im = InputManager.getInstance();
         long now = SystemClock.uptimeMillis();
 
         final KeyEvent downEvent = new KeyEvent(now, now, KeyEvent.ACTION_DOWN,
                 keyCode, 0, 0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
-                KeyEvent.FLAG_FROM_SYSTEM | KeyEvent.FLAG_VIRTUAL_HARD_KEY, InputDevice.SOURCE_CLASS_BUTTON);
+                KeyEvent.FLAG_FROM_SYSTEM, InputDevice.SOURCE_CLASS_BUTTON);
         final KeyEvent upEvent = KeyEvent.changeAction(downEvent,
                 KeyEvent.ACTION_UP);
 
@@ -675,9 +661,6 @@ public class KeyHandler implements DeviceKeyHandler {
             @Override
             public void run() {
                 im.injectInputEvent(upEvent, InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
-                if (mIsHapticFeedbackEnabledOnSystem_) {
-                    setHapticFeedbackEnabledOnSystem(true);
-                }
             }
         }, 20);
     }
@@ -829,50 +812,12 @@ public class KeyHandler implements DeviceKeyHandler {
         }
 
         if (isHapticFeedbackEnabledOnFP()) {
-            long[] pattern = null;
             int owningUid;
             String owningPackage;
             owningUid = android.os.Process.myUid();
             owningPackage = mContext.getOpPackageName();
-            VibrationEffect effect;
-            if (longpress) {
-                pattern = getLongIntArray(mContext.getResources(), com.android.internal.R.array.config_longPressVibePattern);
-            } else {
-                pattern = getLongIntArray(mContext.getResources(), com.android.internal.R.array.config_virtualKeyVibePattern);
-            }
-            if (pattern.length == 0) {
-                // No vibration
-                return;
-            } else if (pattern.length == 1) {
-                // One-shot vibration
-                effect = VibrationEffect.createOneShot(pattern[0], VibrationEffect.DEFAULT_AMPLITUDE);
-            } else {
-                // Pattern vibration
-                effect = VibrationEffect.createWaveform(pattern, -1);
-            }
+            VibrationEffect effect = longpress ? VibrationEffect.createWaveform(LONG_PRESS_VIBRATION_PATTERN, -1) : VibrationEffect.get(VibrationEffect.EFFECT_CLICK);
             mVibrator.vibrate(owningUid, owningPackage, effect, VIBRATION_ATTRIBUTES);
-        }
-    }
-
-    private class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.HAPTIC_FEEDBACK_ENABLED), false, this, UserHandle.USER_ALL);
-            update();
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            update();
-        }
-
-        public void update() {
-            mIsHapticFeedbackEnabledOnSystem = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.HAPTIC_FEEDBACK_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
         }
     }
 
