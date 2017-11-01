@@ -108,6 +108,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private Handler mHandler;
     private int fpTapCounts = 0;
     private boolean fpTapPending = false;
+    private boolean fpGesturePending = false;
     private SettingsObserver mSettingsObserver;
     private Runnable doubleTapRunnable = new Runnable() {
         public void run() {
@@ -127,6 +128,11 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
             }
             resetDoubleTapOnFP();
+        }
+    };
+    private Runnable fpGestureRunnable = new Runnable() {
+        public void run() {
+            resetFPGestureDelay();
         }
     };
 
@@ -476,6 +482,16 @@ public class KeyHandler implements DeviceKeyHandler {
         if (event.getAction() != KeyEvent.ACTION_UP) {
             return true;
         }
+        
+        if (isFPScanCode){
+            if (fpGesturePending) {
+                return false;
+            } else {
+                resetFPGestureDelay();
+                fpGesturePending = true;
+                mHandler.postDelayed(fpGestureRunnable, 10);
+            }
+        }
 
         if (scanCode != FP_TAP_SCANCODE) {
             resetDoubleTapOnFP();
@@ -733,6 +749,11 @@ public class KeyHandler implements DeviceKeyHandler {
         }, mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
+
+    private void resetFPGestureDelay() {
+        fpGesturePending = false;
+        mHandler.removeCallbacks(fpGestureRunnable);
+    }
 
     private void fireScreenOffAction(int action) {
         boolean haptic = Settings.System.getInt(mContext.getContentResolver(), KEY_GESTURE_ENABLE_HAPTIC_FEEDBACK, 1) != 0;
