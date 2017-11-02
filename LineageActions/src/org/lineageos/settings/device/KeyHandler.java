@@ -171,7 +171,7 @@ public class KeyHandler implements DeviceKeyHandler {
         }
 
         mCameraManager = (CameraManager) mContext.getSystemService(Context.CAMERA_SERVICE);
-        mCameraManager.registerTorchCallback(new MyTorchCallback(), mFPScreenOffGesturesHandler);
+        mCameraManager.registerTorchCallback(new MyTorchCallback(), null);
 
         mHandler = new Handler(Looper.getMainLooper());
     }
