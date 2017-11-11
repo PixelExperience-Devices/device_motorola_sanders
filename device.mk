@@ -264,6 +264,7 @@ PRODUCT_PACKAGES += \
     nfc_nci.msm8953 \
     NfcNci \
     Tag \
+    TagGoogle \
     com.android.nfc_extras \
     android.hardware.nfc@1.0-impl
 
