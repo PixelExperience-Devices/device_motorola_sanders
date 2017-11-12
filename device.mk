@@ -333,6 +333,7 @@ PRODUCT_PACKAGES += \
     init.mmi.boot.sh \
     init.mmi.rc \
     init.mmi.usb.rc \
+    init.safailnet.rc \
     init.qcom.rc \
     init.qcom.sensors.sh \
     init.sanders.rc
