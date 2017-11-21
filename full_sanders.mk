@@ -14,10 +14,19 @@
 # limitations under the License.
 #
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/motorola/sanders/core_32_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit from potter device
 $(call inherit-product, device/motorola/sanders/device.mk)
+
+# Dexpreopt fixes
 $(call inherit-product, device/motorola/sanders/dexpreopt.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
 PRODUCT_NAME := full_sanders
+
+# for specific
+$(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)

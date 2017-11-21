@@ -17,11 +17,6 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/sanders/full_sanders.mk)
-$(call inherit-product, device/motorola/sanders/core_32_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# for specific
-$(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/aosp/common.mk)
