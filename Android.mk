@@ -146,6 +146,13 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
+NUKE_NOTEPAD := $(TARGET_OUT)/app/Notepadv3Solution
+$(NUKE_NOTEPAD): $(LOCAL_INSTALLED_MODULE)
+	@echo "Removing: $@"
+	@rm -rf $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(NUKE_NOTEPAD)
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif
