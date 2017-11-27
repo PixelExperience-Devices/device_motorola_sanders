@@ -185,7 +185,8 @@ PRODUCT_PACKAGES += \
     libgnss \
     liblocation_api \
     android.hardware.gnss@1.0-impl-qti \
-    libloc_api-rpc-qc
+    libloc_api-rpc-qc \
+    libshims_get_process_name
 
 # HIDL
 PRODUCT_COPY_FILES += \
