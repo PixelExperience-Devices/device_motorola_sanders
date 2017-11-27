@@ -488,9 +488,10 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
 
-service cnd /system/bin/cnd
+service cnd /system/vendor/bin/cnd
     class main
-    socket cnd stream 660 root inet
+    user system
+    group system wifi inet radio wakelock net_admin
 
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
