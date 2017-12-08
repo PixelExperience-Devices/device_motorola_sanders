@@ -35,6 +35,9 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
+using android::base::GetProperty;
+using android::init::property_set;
+
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
@@ -49,7 +52,7 @@ void property_override(char const prop[], char const value[])
 void num_sims() {
     std::string dualsim;
 
-    dualsim = android::base::GetProperty("ro.boot.dualsim", "");
+    dualsim = GetProperty("ro.boot.dualsim", "");
     property_set("ro.hw.dualsim", dualsim.c_str());
 
     if (dualsim == "true") {
@@ -61,17 +64,17 @@ void num_sims() {
 
 void vendor_load_properties()
 {
-    std::string platform = android::base::GetProperty("ro.board.platform", "");
+    std::string platform = GetProperty("ro.board.platform", "");
 
     if (platform != ANDROID_TARGET)
         return;
 
-    std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
+    std::string sku = GetProperty("ro.boot.hardware.sku", "");
     property_set("ro.product.model", sku.c_str());
 
     // rmt_storage
-    std::string device = android::base::GetProperty("ro.boot.device", "");
-    std::string radio = android::base::GetProperty("ro.boot.radio", "");
+    std::string device = GetProperty("ro.boot.device", "");
+    std::string radio = GetProperty("ro.boot.radio", "");
     property_set("ro.hw.device", device.c_str());
     property_set("ro.hw.radio", radio.c_str());
     property_set("ro.hw.fps", "true");
