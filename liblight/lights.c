@@ -140,7 +140,7 @@ set_light_notifications(struct light_device_t* dev,
     pthread_mutex_lock(&g_lock);
 
     if (is_lit(state))
-        brightness_level = LED_LIGHT_BLINK_FAST;
+        brightness_level = LED_LIGHT_BLINK_SLOW;
     else
         brightness_level = LED_LIGHT_OFF;
 
