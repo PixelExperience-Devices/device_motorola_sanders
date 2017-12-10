@@ -69,6 +69,10 @@ void vendor_load_properties()
     if (platform != ANDROID_TARGET)
         return;
 
+    // fingerprint
+    property_override("ro.build.description", "sanders-7.1.1/NPS26.116-26/30:user/release-keys");
+    property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"); // safetynet hax
+
     std::string sku = GetProperty("ro.boot.hardware.sku", "");
     property_set("ro.product.model", sku.c_str());
 
