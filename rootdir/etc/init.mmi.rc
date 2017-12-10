@@ -1,5 +1,5 @@
 # Moto USB configuration
-import init.mmi.usb.rc
+import /vendor/etc/init/hw/init.mmi.usb.rc
 
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
@@ -42,8 +42,9 @@ on post-fs
     mkdir /persist/wifi 0755 oem_5004 oem_5004
     mkdir /persist/bt 0755 oem_5004 bluetooth
     mkdir /persist/wmdrm 0775 oem_5003 oem_5003
-    mkdir /persist/public/usc_dm 0775 radio radio
     mkdir /persist/sds 0700 vold vold
+    mkdir /persist/rfs/msm/mpss/mot_rfs 0771 rfs system
+    mkdir /persist/public/usc_dm 0775 radio radio
 
     chown oem_5004 oem_5004 /persist/factory/fti
     chmod 0660 /persist/factory/fti
@@ -59,7 +60,12 @@ on post-fs
     chown radio mot_tcmd /persist/public/hiddenmenu/life_timer
     chmod 0775 /persist/public/hiddenmenu/life_timer
 
-    swapon_all fstab.qcom
+    chmod 0711 /persist/rfs
+    chmod 0711 /persist/rfs/msm
+    chmod 0711 /persist/rfs/msm/mpss
+    chmod 0771 /persist/rfs/msm/mpss/mot_rfs
+
+    swapon_all /vendor/etc/fstab.qcom
     write /proc/sys/vm/page-cluster 0
 
 on post-fs-data
@@ -142,6 +148,12 @@ on post-fs-data
     # Imager tuning data for camera subsystem
     mkdir /data/misc/imager 0770 camera camera
 
+    # OTA Package directory
+    mkdir /data/misc_ne 0770 system cache
+
+    # NFC vendor data
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
     #setup folder for WLAN WAPI
     chmod 0770 /data/wapi_certificate
 
@@ -211,7 +223,7 @@ on boot
    write /sys/module/binder/parameters/debug_mask 0x5
 
 # Pass carrier to wlan
-service init_wifi /system/bin/wlan_carrier_bin.sh
+service init_wifi /system/vendor/bin/wlan_carrier_bin.sh
     class main
     user root
     group root
@@ -251,23 +263,23 @@ service fingerprintd /system/bin/fingerprintd
     user system
     group input
 
-service mmi-boot-sh /system/bin/init.mmi.boot.sh
+service mmi-boot-sh /system/vendor/bin/init.mmi.boot.sh
     class core
     user root
     oneshot
 
-service mmi-touch-sh /system/bin/init.mmi.touch.sh
+service mmi-touch-sh /system/vendor/bin/init.mmi.touch.sh
     class core
     user root
     oneshot
 
-service oem-hw-sh /system/bin/init.oem.hw.sh
+service oem-hw-sh /system/vendor/bin/init.oem.hw.sh
     class core
     user root
     oneshot
 
 # Sanders uses qcom sensor service
-service sensors /system/bin/sensors.qcom
+service sensors /system/vendor/bin/sensors.qcom
     class core
     user root
     group root
@@ -293,6 +305,14 @@ on property:sys.wifi.tethering=true
 
 on property:sys.wifi.tethering=false
     write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${sys.rmnet_vnd.rps_mask}
+    write /sys/module/wlan/parameters/fwpath apdown
+
+#Override fwpath string when wpa_supplicant server was killed
+on property:init.svc.wpa_supplicant=running
+    write /sys/module/wlan/parameters/fwpath sta
+
+on property:init.svc.wpa_supplicant=stopped
+    write /sys/module/wlan/parameters/fwpath wpadown
 
 on property:ro.bootmode=normal
    write /sys/module/usb3813_hub/parameters/boost_val 3
