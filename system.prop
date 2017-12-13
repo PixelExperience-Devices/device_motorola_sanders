@@ -222,6 +222,9 @@ persist.data.iwlan.enable=true
 # Sensors
 ro.hardware.sensors=sanders
 
+# SensorService
+system_init.startsensorservice=0
+
 # USB
 ro.usb.mtp=0x2e82
 ro.usb.mtp_adb=0x2e76
