@@ -92,4 +92,15 @@
    
    <!-- Pip -->
    <string name="app_does_not_support_pip">App does not support picture-in-picture mode.</string>
+
+   <!-- Proximity sensor -->
+   <string name="allow_proximity_sensor_title">Allow proximity sensor</string>
+   <string name="allow_proximity_sensor_summary">Check the proximity sensor before performing the action</string>
+
+   <!-- Title text for double tap power for camera [CHAR LIMIT=60]-->
+   <string name="double_tap_power_for_camera_title">Jump to camera</string>
+
+   <!-- Summary text for double tap power for camera [CHAR LIMIT=160]-->
+   <string name="double_tap_power_for_camera_summary">To quickly open camera, press the power button twice. Works from any screen.</string>
+
 </resources>
