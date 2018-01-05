@@ -558,6 +558,12 @@ service adsprpcd /system/vendor/bin/adsprpcd
     user media
     group media
 
+service energy-awareness /system/vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
+
 service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
     class core
     user root
