@@ -248,6 +248,9 @@ on property:ro.boot.dualsim=false
    setprop persist.radio.multisim.config ""
    setprop ro.telephony.default_network 10
 
+on property:ro.boot.hwrev=*
+   start mmi-boot-sh
+
 service adspd /system/vendor/bin/adspd
    class main
    socket adspdsock stream 0660 system audio
@@ -263,16 +266,7 @@ service mmi-boot-sh /system/vendor/bin/init.mmi.boot.sh
     class core
     user root
     oneshot
-
-service mmi-touch-sh /system/vendor/bin/init.mmi.touch.sh
-    class core
-    user root
-    oneshot
-
-service oem-hw-sh /system/vendor/bin/init.oem.hw.sh
-    class core
-    user root
-    oneshot
+    disabled
 
 # Sanders uses qcom sensor service
 service sensors /system/vendor/bin/sensors.qcom
