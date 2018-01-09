@@ -193,6 +193,11 @@ PRODUCT_PACKAGES += \
     libloc_api-rpc-qc \
     libshims_get_process_name
 
+# health
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
+
 # IMS
 PRODUCT_PACKAGES += \
     libshim_ims
