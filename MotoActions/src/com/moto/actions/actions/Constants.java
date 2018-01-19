@@ -204,7 +204,7 @@ public class Constants {
     public static void writePreference(Context context, String pref) {
 
         String value = "1";
-        Log.e(TAG, "Write Pref: " + pref);
+
         if (!pref.equals(FP_KEYS) && !pref.equals(FP_KEY_DBLTAP) && !pref.equals(FP_KEY_HOLD) && !pref.equals(FP_KEY_LEFT) && !pref.equals(FP_KEY_RIGHT) &&
             !pref.equals(FP_KEYS_OFF) && !pref.equals(FP_KEY_DBLTAP_OFF) && !pref.equals(FP_KEY_HOLD_OFF) && !pref.equals(FP_KEY_LEFT_OFF) && !pref.equals(FP_KEY_RIGHT_OFF))
             value = isPreferenceEnabled(context, pref) ? "1" : "0";
@@ -212,7 +212,6 @@ public class Constants {
             value = GetPreference(context, pref);
 
         String node = sBooleanNodePreferenceMap.get(pref);
-            Log.e(TAG, "Write " + value + " to node " + node);
 
         if (!FileUtils.writeLine(node, value)) {
             Log.w(TAG, "Write " + value + " to node " + node +
