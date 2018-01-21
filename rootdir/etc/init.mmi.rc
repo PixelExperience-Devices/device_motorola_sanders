@@ -162,7 +162,7 @@ on boot
    chmod 0660 /sys/module/phy_msm_usb/parameters/host_mode_disable
    chown root oem_5004 /sys/devices/soc/7000000.ssusb/disable_id_pin
    chmod 0220 /sys/devices/soc/7000000.ssusb/disable_id_pin
-    
+
    #change ownership and permission for LTR559
    chown system system /sys/class/sensors/Rear\ Proximity\ sensor/enable
    chown system system /sys/class/sensors/Rear\ Proximity\ sensor/poll_delay
@@ -219,7 +219,7 @@ on boot
    write /sys/module/binder/parameters/debug_mask 0x5
 
 # Pass carrier to wlan
-service init_wifi /system/vendor/bin/wlan_carrier_bin.sh
+service init_wifi /system/vendor/bin/sh /system/vendor/bin/wlan_carrier_bin.sh
     class main
     user root
     group root
@@ -257,7 +257,7 @@ service adspd /system/vendor/bin/adspd
    user audio
    group audio input diag
 
-service mmi-boot-sh /system/vendor/bin/init.mmi.boot.sh
+service mmi-boot-sh /system/vendor/bin/sh /system/vendor/bin/init.mmi.boot.sh
     class core
     user root
     oneshot
