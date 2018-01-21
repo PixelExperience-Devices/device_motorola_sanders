@@ -35,12 +35,6 @@ allow init self:netlink_socket { read write getattr connect };
 allow init debugfs:file write;
 allow init persist_file:filesystem { getattr mount relabelfrom relabelto };
 
-# binder_call(batterystats_service, servicemanager);
-# allow init batterystats_service:service_manager find;
-
-# binder_call(hal_sensors_hwservice, servicemanager);
-# allow init hal_sensors_hwservice:service_manager find;
-
 allow init self:capability sys_nice;
 
 allow init bt_firmware_file:filesystem { associate };
@@ -56,3 +50,7 @@ allow init self:capability2 { block_suspend };
 allow init hal_sensors_hwservice:hwservice_manager find;
 
 allow init { domain -lmkd -crash_dump }:process noatsecure;
+
+allow init hal_perf_hwservice:hwservice_manager find;
+allow init hidl_base_hwservice:hwservice_manager add;
+
