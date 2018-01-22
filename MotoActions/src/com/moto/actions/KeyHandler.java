@@ -59,7 +59,6 @@ import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
-import android.widget.Toast;
 
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
@@ -582,11 +581,6 @@ public class KeyHandler implements DeviceKeyHandler {
             case ACTION_SCREENSHOT:
                 triggerVirtualKeypress(mHandler, KeyEvent.KEYCODE_SYSRQ);
                 break;
-            case ACTION_PIP:
-                if (!mKeyguardManager.inKeyguardRestrictedInputMode()) {
-                    goToPipMode();
-                }
-                break;
             case ACTION_LAST_APP:
                 if (!mKeyguardManager.inKeyguardRestrictedInputMode()) {
                     switchToLastApp(mContext);
@@ -600,26 +594,6 @@ public class KeyHandler implements DeviceKeyHandler {
             return;
         }
         mVibrator.vibrate(intensity);
-    }
-
-    private void goToPipMode() {
-        ActivityInfo ai = getRunningActivityInfo(mContext);
-        if (ai != null && !ai.supportsPictureInPicture()) {
-            try {
-                PackageManager pm = mContext.getPackageManager();
-                Resources resources = pm.getResourcesForApplication("com.moto.actions");
-                int resId = resources.getIdentifier("app_does_not_support_pip", "string", "com.moto.actions");
-                final String text = resources.getString(resId);
-                mHandler.post(new Runnable() {
-                    public void run() {
-                        Toast.makeText(mContext, text, Toast.LENGTH_SHORT).show();
-                    }
-                });
-            } catch (Exception e) {
-            }
-            return;
-        }
-        triggerVirtualKeypress(mHandler, 171);
     }
 
     private void toggleScreenState() {
