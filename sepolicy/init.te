@@ -33,7 +33,7 @@ allow init netd:unix_stream_socket connectto;
 allow init self:netlink_socket { read write getattr connect };
 
 allow init debugfs:file write;
-allow init persist_file:filesystem { getattr mount relabelfrom relabelto };
+allow init persist_file:filesystem { getattr mount relabelfrom relabelto unmount };
 
 allow init self:capability sys_nice;
 
