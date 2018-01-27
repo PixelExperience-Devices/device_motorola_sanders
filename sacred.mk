@@ -18,8 +18,8 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/sanders/full_sanders.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+# Inherit some common SacredOS stuff.
+$(call inherit-product, vendor/sacred/common.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -27,7 +27,7 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
-PRODUCT_NAME := aosp_sanders
+PRODUCT_NAME := sacred_sanders
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 
