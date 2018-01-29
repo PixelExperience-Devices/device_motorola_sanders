@@ -10,6 +10,7 @@
 /system/bin/charge_only_mode                             u:object_r:charge_only_exec:s0
 /system/vendor/bin/init\.mmi\.boot\.sh                          u:object_r:mmi_boot_exec:s0
 /system/vendor/bin/wlan_carrier_bin\.sh                         u:object_r:init_wifi_exec:s0
+/system/vendor/bin/init\.qti\.fm\.sh		u:object_r:qti_init_shell_exec:s0
 
 # CMActions
 /sys/homebutton(/.*)?                                    u:object_r:sysfs_homebutton:s0
