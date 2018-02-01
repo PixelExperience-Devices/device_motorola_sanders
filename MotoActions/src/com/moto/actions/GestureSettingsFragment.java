@@ -69,7 +69,7 @@ public class GestureSettingsFragment extends PreferenceFragment {
 
     private boolean isCameraDoubleTapPowerEnabled(){
         return Settings.Secure.getIntForUser(getActivity().getContentResolver(),
-                        Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1, UserHandle.USER_CURRENT) == 1;
+                        Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0, UserHandle.USER_CURRENT) == 0;
     }
 
     private void setCameraDoubleTapPowerEnabled(boolean enabled){
