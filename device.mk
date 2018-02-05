@@ -344,6 +344,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensorservice_32
 
+# Shims
+PRODUCT_PACKAGES += \
+    libqsap_shim
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-sanders.conf:system/vendor/etc/thermal-engine.conf
