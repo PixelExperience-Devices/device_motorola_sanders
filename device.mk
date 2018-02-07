@@ -182,19 +182,15 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
-# GNSS HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
-
 # GPS
 PRODUCT_PACKAGES += \
-    libgps.utils \
-    gps.default \
     libgnss \
-    liblocation_api \
+    libgnsspps \
     android.hardware.gnss@1.0-impl-qti \
-    libloc_api-rpc-qc \
-    libshims_get_process_name
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service-qti \
+    libqsap_sdk \
+    libqsap_shim
 
 # health
 PRODUCT_PACKAGES += \
