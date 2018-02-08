@@ -26,7 +26,6 @@ import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.hardware.TriggerEventListener;
 import android.util.Log;
 
 public class SensorHelper {
@@ -37,6 +36,7 @@ public class SensorHelper {
     private static final int SENSOR_TYPE_MMI_FLAT_UP = 65537;
     private static final int SENSOR_TYPE_MMI_FLAT_DOWN = 65538;
     private static final int SENSOR_TYPE_MMI_STOW = 65539;
+    private static final int SENSOR_TYPE_MMI_GLANCE = 65548;
 
     private static final int BATCH_LATENCY_IN_MS = 100;
 
@@ -81,6 +81,10 @@ public class SensorHelper {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_DOWN, true);
     }
 
+    public Sensor getGlanceSensor() {
+        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_GLANCE, true);
+    }
+
     public Sensor getProximitySensor() {
         return mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, true);
     }
@@ -98,16 +102,5 @@ public class SensorHelper {
 
     public void unregisterListener(SensorEventListener listener) {
         mSensorManager.unregisterListener(listener);
-    }
-
-    /* TriggerSensor */
-    public void requestTriggerSensor(Sensor sensor, TriggerEventListener listener) {
-        if (!mSensorManager.requestTriggerSensor(listener, sensor)) {
-            throw new RuntimeException("Failed to requestTriggerSensor for sensor " + sensor);
-        }
-    }
-
-    public void cancelTriggerSensor(Sensor sensor, TriggerEventListener listener) {
-        mSensorManager.cancelTriggerSensor(listener, sensor);
     }
 }
