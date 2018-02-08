@@ -35,7 +35,7 @@ import com.moto.actions.actions.LiftToSilence;
 import com.moto.actions.actions.ProximitySilencer;
 
 import com.moto.actions.doze.DozePulseAction;
-//import com.moto.actions.doze.GlanceSensor;
+import com.moto.actions.doze.GlanceSensor;
 import com.moto.actions.doze.ProximitySensor;
 import com.moto.actions.doze.ScreenReceiver;
 import com.moto.actions.doze.ScreenStateNotifier;
@@ -71,7 +71,7 @@ public class MotoActionsService extends IntentService implements ScreenStateNoti
         mScreenStateNotifiers.add(mDozePulseAction);
 
         // Actionable sensors get screen on/off notifications
-        //mScreenStateNotifiers.add(new GlanceSensor(motoActionsSettings, mSensorHelper, mDozePulseAction));
+        mScreenStateNotifiers.add(new GlanceSensor(motoActionsSettings, mSensorHelper, mDozePulseAction));
         mScreenStateNotifiers.add(new ProximitySensor(motoActionsSettings, mSensorHelper, mDozePulseAction));
         mScreenStateNotifiers.add(new StowSensor(motoActionsSettings, mSensorHelper, mDozePulseAction));
 
