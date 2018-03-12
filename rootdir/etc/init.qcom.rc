@@ -752,7 +752,7 @@ service iprenew_wigig0 /system/bin/dhcpcd -n
     oneshot
 
 on property:ro.hw.dtv=true
-    insmod /system/lib/modules/isdbt.ko
+    insmod /system/vendor/lib/modules/isdbt.ko
 
 service wlan_logging /system/bin/cnss_diag -q -f
     class main
@@ -817,10 +817,6 @@ service fm_dl /system/bin/sh /system/vendor/etc/init.qcom.fm.sh
     group system
     disabled
     oneshot
-
-on property:crypto.driver.load=1
-     insmod /system/lib/modules/qce.ko
-     insmod /system/lib/modules/qcedev.ko
 
 service atfwd /system/vendor/bin/ATFWD-daemon
     class late_start
