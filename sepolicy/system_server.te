@@ -6,3 +6,6 @@ allow system_server rild:binder transfer;
 allow system_server sysfs_capsense:dir search;
 allow system_server sysfs_capsense:file rw_file_perms;
 
+allow system_server vendor_file:file { getattr open read execute };
+
+get_prop(system_server, alarm_boot_prop)
