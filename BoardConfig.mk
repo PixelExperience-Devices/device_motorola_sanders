@@ -176,9 +176,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
 
-# Media
-# TARGET_USES_MEDIA_EXTENSIONS := true
-
 PRODUCT_BOOT_JARS += telephony-ext
 
 NXP_CHIP_TYPE := PN551
