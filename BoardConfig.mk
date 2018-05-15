@@ -215,11 +215,11 @@ USE_SENSOR_MULTI_HAL := true
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/adspd|libshim_adsp.so \
+    /vendor/bin/adspd|libshim_adsp.so \
     /system/lib/lib_motsensorlistener.so|libsensor.so \
 	/system/lib/libjustshoot.so|libshims_camera.so \
 	/system/vendor/lib/libguy.so|libshim_camera_hal.so \
-	/system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
+	/vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -234,3 +234,8 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
+# Split selinux policy
+
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_PARTITION_SIZE := 805306368
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
