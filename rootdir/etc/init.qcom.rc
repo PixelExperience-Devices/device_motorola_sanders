@@ -545,7 +545,7 @@ service esepmdaemon /vendor/bin/esepmdaemon
     user system
     group nfc
 
-service wcnss-service /system/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
