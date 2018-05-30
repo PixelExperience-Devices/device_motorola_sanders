@@ -22,7 +22,7 @@ FIRMWARE_ADSP_IMAGES := \
     adsp.b07 adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 \
     adsp.mdt
 
-FIRMWARE_ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(FIRMWARE_ADSP_IMAGES)))
+FIRMWARE_ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_ADSP_IMAGES)))
 $(FIRMWARE_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "ADSP Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -34,7 +34,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_ADSP_SYMLINKS)
 FIRMWARE_CPPF_IMAGES := \
     cppf.b00 cppf.b01 cppf.b02 cppf.b03 cppf.b04 cppf.b05 cppf.b06 cppf.mdt
 
-FIRMWARE_CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(FIRMWARE_CPPF_IMAGES)))
+FIRMWARE_CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_CPPF_IMAGES)))
 $(FIRMWARE_CPPF_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Fingerprint Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -48,7 +48,7 @@ FIRMWARE_FINGERPRINT_IMAGES := \
     fpctzappfingerprint.b03 fpctzappfingerprint.b04 fpctzappfingerprint.b05 \
     fpctzappfingerprint.b06 fpctzappfingerprint.mdt
 
-FIRMWARE_FINGERPRINT_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(FIRMWARE_FINGERPRINT_IMAGES)))
+FIRMWARE_FINGERPRINT_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_FINGERPRINT_IMAGES)))
 $(FIRMWARE_FINGERPRINT_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Fingerprint Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -63,7 +63,7 @@ FIRMWARE_MODEM_IMAGES := \
     modem.b13 modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 \
     modem.mdt
 
-FIRMWARE_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(FIRMWARE_MODEM_IMAGES)))
+FIRMWARE_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_MODEM_IMAGES)))
 $(FIRMWARE_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem Firmware link: $@"
 	@mkdir -p $(dir $@)
