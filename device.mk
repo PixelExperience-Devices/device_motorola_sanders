@@ -71,7 +71,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
-    libshim_adsp \
     libtinycompress \
     audiod
 
@@ -114,9 +113,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0_vendor \
-    libshim_camera_hal \
-    libshims_camera
+    vendor.qti.hardware.camera.device@1.0_vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
@@ -206,9 +203,7 @@ PRODUCT_PACKAGES += \
     libgnsspps \
     android.hardware.gnss@1.0-impl-qti \
     android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service-qti \
-    libqsap_sdk \
-    libqsap_shim
+    android.hardware.gnss@1.0-service-qti
 
 # health
 PRODUCT_PACKAGES += \
@@ -368,10 +363,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service_32 \
     sensorservice_32
-
-# Shims
-PRODUCT_PACKAGES += \
-    libqsap_shim
 
 # Thermal
 PRODUCT_COPY_FILES += \
