@@ -86,10 +86,6 @@ void vendor_load_properties()
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
     property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
 
-    // fingerprint
-    property_override("ro.build.description", "sanders-7.1.1/NPS26.116-26/30:user/release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"); // safetynet hax
-
     // rmt_storage
     std::string device = GetProperty("ro.boot.device", "");
     std::string radio = GetProperty("ro.boot.radio", "");
