@@ -1,0 +1,26 @@
+[
+  {
+    "remote":      "github",
+    "repository":  "Keertesh19/kernel_motorola_msm8953",
+    "target_path": "kernel/motorola/msm8953",
+    "branch":      "8.1-ods"
+  },
+  {
+    "remote":      "github",
+    "repository":  "BigTopKrazies/vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch":      "8.1"
+  },  
+  {
+    "remote":      "github",
+    "repository":  "PixelExperience/PixelExperience/packages_resources_MotoActions",
+    "target_path": "packages/resources/MotoActions",
+    "branch":      "oreo-mr1"
+  },
+  {
+    "repository":  "jhenrique09/prebuilts_clang_host_linux-x86_7.0-DragonTC",
+    "target_path": "prebuilts/clang/host/linux-x86/7.0-DragonTC",
+    "branch":      "master",
+    "remote":      "github"
+  }
+]
