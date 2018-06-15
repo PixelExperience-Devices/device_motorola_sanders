@@ -438,13 +438,12 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.power</name>
+        <name>android.hardware.sensors</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>ILineagePower</name>
+            <name>ISensors</name>
             <instance>default</instance>
         </interface>
     </hal>
 </manifest>
-
