@@ -230,6 +230,7 @@ persist.data.df.dev_name=rmnet_usb0
 
 # Sensors
 ro.hardware.sensors=sanders
+ro.mot.sensors.glance_approach=false
 
 # SensorService
 system_init.startsensorservice=0
