@@ -98,6 +98,9 @@ special_mode_mask values:
       <A3Preview>mot_s5k3l8_mono_zsl_preview_3a</A3Preview>
       <A3Video>mot_s5k3l8_mono_zsl_video_3a</A3Video>
     </ChromatixName>
+    <ChromatixName sensor_resolution_index="0" special_mode_mask="ZOOM_DOWNSCALE">
+      <CPPSnapshot>mot_s5k3l8_mono_cpp_snapshot_downscale</CPPSnapshot>
+    </ChromatixName>
     <ChromatixName sensor_resolution_index="1" special_mode_mask="0">
       <ISPPreview>mot_s5k3l8_mono_preview</ISPPreview>
       <ISPSnapshot>mot_s5k3l8_mono_preview</ISPSnapshot>
