@@ -66,7 +66,7 @@
 	<usecase name="USECASE_VOLTE_CALL" type="out" id="15"/>
 	<usecase name="USECASE_VOWLAN_CALL" type="in" id="16"/>
 	<usecase name="USECASE_VOWLAN_CALL" type="out" id="16"/>
-	<usecase name="USECASE_AUDIO_DSM_FEEDBACK" type="in" id="55" />
+	<usecase name="USECASE_AUDIO_DSM_FEEDBACK" type="in" id="60" />
 </pcm_ids>
 
 <config_params>
