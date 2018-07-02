@@ -7,9 +7,9 @@
   },
   {
     "remote":      "github",
-    "repository":  "BigTopKrazies/vendor_motorola_sanders",
+    "repository":  "Keertesh19/vendor_motorola_sanders",
     "target_path": "vendor/motorola/sanders",
-    "branch":      "8.1"
+    "branch":      "oreo-mr1"
   },  
   {
     "remote":      "github",
