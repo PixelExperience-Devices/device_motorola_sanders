@@ -55,6 +55,9 @@ TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
+# HDIL - enable this for ROMs build base/transport hidl in their sources
+#BUILD_DEVICE_LIBHIDL := false
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sanders
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sanders

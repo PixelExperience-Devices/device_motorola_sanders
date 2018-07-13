@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(filter false,$(BUILD_DEVICE_LIBHIDL)),)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
@@ -35,3 +36,4 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+endif
