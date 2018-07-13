@@ -53,6 +53,7 @@ TARGET_OTA_ASSERT_DEVICE := sanders,sanders_retail
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
+USING_DEVICE_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
 # HDIL - enable this for ROMs build base/transport hidl in their sources
