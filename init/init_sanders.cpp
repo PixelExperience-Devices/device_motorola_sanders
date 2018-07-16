@@ -93,4 +93,15 @@ void vendor_load_properties()
     property_set("ro.hw.imager", "12MP");
 
     num_sims();
+     if (sku == "XT1806") {
+         property_set("ro.hw.ecompass", "true");
+         property_set("ro.hw.nfc", "false");
+     }
+     else {
+         property_set("ro.hw.ecompass", "false");
+         property_set("ro.hw.nfc", "true");
+     }
+     if (sku == "XT1802") {
+         property_set("ro.hw.dtv", "true");
+     }
 }
