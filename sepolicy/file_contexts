@@ -115,3 +115,25 @@
 
 # WCNSS
 /sys/module/wcnsscore/parameters(/.*)?                   u:object_r:sysfs_wcnsscore:s0
+
+/data/misc/perfd(/.*)?                                          u:object_r:perfd_data_file:s0
+/data/system/perfd(/.*)?                                        u:object_r:perfd_data_file:s0
+/data/oemnvitems(/.*)?                                          u:object_r:nv_data_file:s0
+/data/vendor/time(/.*)?                                         u:object_r:time_data_file:s0
+
+/system/vendor/bin/perfd           u:object_r:perfd_exec:s0
+/system/vendor/bin/hw/android\.hardware\.power@1\.1-service-qti          u:object_r:hal_power_default_exec:s0
+/system/vendor/radio(/.*)? u:object_r:radio_data_file:s0
+
+/system/vendor/bin/qmi_motext_hook u:object_r:rild_exec:s0
+
+/sys/kernel/debug/rmt_storage(/.*)? u:object_r:debugfs_rmt_storage:s0
+
+/data/vendor/nfc(/.*)? u:object_r:nfc_data_file:s0
+
+# Fingerprint custom hal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service_32 u:object_r:hal_fingerprint_default_exec:s0
+
+# Sensors 32b hal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service_32        u:object_r:hal_sensors_default_exec:s0
+
