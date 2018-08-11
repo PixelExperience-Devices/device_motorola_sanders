@@ -290,15 +290,13 @@ PRODUCT_PACKAGES += \
     libandroid_net_32
 
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.1-service \
     libnfc \
-    libnfc_jni \
-    nfc_nci.msm8953 \
     NfcNci \
+    SecureElement \
     Tag \
     TagGoogle \
-    com.android.nfc_extras \
-    android.hardware.nfc@1.0-impl \
-    android.hardware.nfc@1.0-service
+    com.android.nfc_extras
 
 # OMX
 PRODUCT_PACKAGES += \
