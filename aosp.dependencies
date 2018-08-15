@@ -3,7 +3,7 @@
     "remote":      "github",
     "repository":  "Keertesh19/kernel_motorola_msm8953",
     "target_path": "kernel/motorola/msm8953",
-    "branch":      "8.1-ods"
+    "branch":      "8.1-moto"
   },
   {
     "remote":      "github",
