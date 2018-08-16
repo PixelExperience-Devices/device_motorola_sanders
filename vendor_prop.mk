@@ -248,10 +248,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.sensors=sanders \
     ro.mot.sensors.glance_approach=false
 
-# SensorService
-PRODUCT_PROPERTY_OVERRIDES += \
-    system_init.startsensorservice=0
-
 #Trim properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
