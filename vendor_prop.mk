@@ -67,6 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.display.umax=1920x1080 \
     persist.vendor.camera.display.lmax=1280x720 \
     camera.mot.startup_probing=0 \
+    persist.camera.eis.enable=1 \
     persist.camera.debug.logfile=0 \
     persist.camera.gyro.disable=0 \
     persist.camera.HAL3.enabled=1 \
