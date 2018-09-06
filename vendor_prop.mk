@@ -12,6 +12,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.pcm.24bit.enable=false \
     audio.offload.track.enable=true \
     persist.audio.dualmic.config=endfire \
+    ro.af.client_heap_size_kbyte=7168 \
     af.fast_track_multiplier=1 \
     audio.offload.disable=false \
     audio.offload.min.duration.secs=60 \
@@ -40,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.hfp.client=1 \
-    qcom.bluetooth.soc=smd \
+    vendor.qcom.bluetooth.soc=smd \
     qcom.bt.le_dev_pwr_class=1 \
     ro.cutoff_voltage_mv=3400 \
     ro.bluetooth.hfp.ver=1.7 \
