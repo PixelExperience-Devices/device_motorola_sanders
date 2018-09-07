@@ -288,3 +288,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpt_adb=0x2ee6 \
     ro.usb.bpteth=0x2ee7 \
     ro.usb.bpteth_adb=0x2ee8
+
+# Volte
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.radio.force_on_dc=true \
+persist.radio.custom_ecc=1 \
+persist.radio.data_con_rprt=1 \
+persist.vendor.radio.data_ltd_sys_ind=1 \
+persist.radio.data_ltd_sys_ind=1 \
+persist.vendor.radio.ignore_dom_time=10 \
+persist.radio.ignore_dom_time=10 \
+persist.radio.rat_on=combine \
+persist.radio.is_wps_enabled=true \
+persist.radio.videopause.mode=1 \
+persist.radio.sap_silent_pin=1 \
+persist.radio.always_send_plmn=true \
+persist.rcs.supported=1 \
+persist.dbg.ims_volte_enable=1 \
+persist.dbg.volte_avail_ovr=1 \
+persist.dbg.vt_avail_ovr=1 \
+persist.dbg.wfc_avail_ovr=1 \
+persist.radio.data_lte_sys_ind=1
