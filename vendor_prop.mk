@@ -85,6 +85,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dpm.feature=0 \
     persist.sys.cnd.iwlan=1
 
+#property to enable fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.qfp=false
+
 # core_ctrl
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_min_cpu=2 \
