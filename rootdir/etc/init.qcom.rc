@@ -84,6 +84,24 @@ on early-boot
     # Motorola uses external sensorhub, do not boot the slpi
     # write /sys/kernel/boot_slpi/boot 1
 
+    # for backward compatibility
+    chown system system /persist/sensors
+    chown system system /persist/sensors/registry
+    chown system system /persist/sensors/registry/registry
+    chown system system /persist/sensors/registry/registry/sensors_registry
+    chown system system /persist/sensors/sensors_settings
+    chown system system /persist/sensors/registry/config
+    chmod 0664 /persist/sensors/sensors_settings
+
+    chown system system /mnt/vendor/persist/sensors
+    chown system system /mnt/vendor/persist/sensors/registry
+    chown system system /mnt/vendor/persist/sensors/registry/registry
+    chown system system /mnt/vendor/persist/sensors/registry/registry/sensors_registry
+    chown system system /mnt/vendor/persist/sensors/sensors_settings
+    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
+    chown system system /mnt/vendor/persist/sensors/registry/config
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+
 on boot
     # access permission for secure touch
     chmod 0660 /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
@@ -685,6 +703,12 @@ service vendor.qti /vendor/bin/qti
     group radio net_raw oem_2950 usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
+service vendor.sensors.qti /vendor/bin/sensors.qti
+    class core
+    user system
+    group system
+    disabled
+
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop vendor.netmgrd
@@ -822,6 +846,11 @@ service fm_dl /vendor/bin/init.qti.fm.sh
 on property:crypto.driver.load=1
      insmod /vendor/lib/modules/qce.ko
      insmod /vendor/lib/modules/qcedev.ko
+
+service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
+    class core
+    user root
+    oneshot
 
 service atfwd /vendor/bin/ATFWD-daemon
     class late_start
