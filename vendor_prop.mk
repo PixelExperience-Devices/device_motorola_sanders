@@ -130,7 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fm.transmitter=false
 
-#HWUI properties
+# HWUI properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
     ro.hwui.layer_cache_size=48 \
@@ -157,10 +157,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.disableQXDMLogs=0 \
     persist.ims.rcs=false \
     persist.ims.volte=true \
-    persist.ims.vt=false \
     persist.ims.vt.epdg=false \
-    persist.mm.sta.enable=0 \
-    persist.vt.supported=0
+    persist.mm.sta.enable=0
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -169,6 +167,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.sec.smoothstreaming=false \
     mm.enable.smoothstreaming=false \
     mmp.enable.3g2=true
+
+# Netmgr
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.use_data_netmgrd=true \
+    persist.data.netmgrd.qos.enable=true \
+    persist.data.mode=concurrent
 
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -198,7 +202,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.apn_delay=5000 \
-    persist.radio.adam=true \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.dfr_mode_set=1 \
     persist.vendor.radio.force_get_pref=1 \
@@ -206,6 +209,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.no_wait_for_card=1 \
     persist.vendor.radio.oem_ind_to_both=0 \
     persist.vendor.radio.relay_oprt_change=1 \
+    ril.subscription.types=NV,RUIM \
     rild.libargs=-d[SPACE]/dev/smd0 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.mot.ignore_csim_appid=true \
@@ -217,7 +221,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.is_wps_enabled=true \
     persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.0x9e_not_callname=1 \
-    persist.vendor.qcril_uim_vcc_feature=1 \
+    persist.vendor.radio.qcril_uim_vcc_feature=1 \
     persist.mot.gps.conf.from.sim=true \
     persist.net.doxlat=true \
     persist.radio.REVERSE_QMI=0 \
@@ -229,19 +233,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.radio.sib16_support=1 \
     persist.vendor.radio.rat_on=combine \
-    persist.rmnet.mux=enabled \
     ro.telephony.call_ring.multiple=false \
     persist.vendor.radio.eri64_as_home=1 \
     persist.vendor.radio.data_con_rprt=1 \
-    ro.use_data_netmgrd=true \
     persist.data.qmi.adb_logmask=0 \
-    persist.data.netmgrd.qos.enable=true \
-    persist.data.mode=concurrent \
-    persist.data.iwlan.enable=true
+    telephony.lteOnCdmaDevice=1 \
+    DEVICE_PROVISIONED=1
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rmnet.data.enable=true \
     persist.data.wda.enable=true \
     persist.data.df.dl_mode=5 \
     persist.data.df.ul_mode=5 \
@@ -249,7 +249,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.agg.dl_size=4096 \
     persist.data.df.mux_count=8 \
     persist.data.df.iwlan_mux=9 \
-    persist.data.df.dev_name=rmnet_usb0
+    persist.data.df.dev_name=rmnet_usb0 \
+    persist.data.iwlan.enable=true \
+    persist.rmnet.data.enable=true \
+    persist.rmnet.mux=enabled
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
