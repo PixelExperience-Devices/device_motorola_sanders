@@ -31,3 +31,10 @@ VNDK_SP_LIBRARIES := \
     libutils \
     libutilscallstack \
     libdexfile \
+
+EXTRA_VENDOR_LIBRARIES := \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.1 \
+    vendor.display.config@1.2 \
+    vendor.nxp.nxpnfc@1.0 \
+    vendor.qti.hardware.camera.device@1.0
