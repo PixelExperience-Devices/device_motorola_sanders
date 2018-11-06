@@ -4,24 +4,13 @@
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.deep_buffer.media=true \
-    vendor.audio.offload.buffer.size.kb=64 \
-    vendor.audio.offload.gapless.enabled=false \
-    vendor.audio.offload.multiple.enabled=false \
-    vendor.audio.offload.pcm.16bit.enable=false \
-    vendor.audio.offload.pcm.24bit.enable=false \
-    audio.offload.track.enable=true \
-    persist.audio.dualmic.config=endfire \
-    ro.af.client_heap_size_kbyte=7168 \
     af.fast_track_multiplier=1 \
+    audio.deep_buffer.media=true \
     audio.offload.disable=false \
     audio.offload.min.duration.secs=60 \
     audio.offload.video=false \
-    vendor.audio.playback.mch.downsample=true \
-    vendor.audio_hal.period_size=240 \
     av.offload.enable=false \
     av.debug.disable.pers.cache=1 \
-    persist.audio.endcall.delay=250 \
     qcom.hw.aac.encoder=false \
     persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
     persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
@@ -30,12 +19,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
     persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
     persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
+    persist.audio.dualmic.config=endfire \
+    persist.audio.endcall.delay=250 \
     persist.vendor.audio.fluence.speaker=false \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicecomm=true \
     persist.vendor.audio.fluence.voicerec=false \
-    ro.qc.sdk.audio.fluencetype=none \
-    ro.qc.sdk.audio.ssr=false \
+    persist.vendor.audio.hw.binder.size_kbyte=1024 \
+    ro.af.client_heap_size_kbyte=7168 \
+    ro.vendor.audio.sdk.fluencetype=none \
+    ro.vendor.audio.sdk.ssr=false \
+    vendor.audio_hal.period_size=240 \
+    vendor.audio.flac.sw.decoder.24bit=true \
+    vendor.audio.offload.buffer.size.kb=64 \
+    vendor.audio.offload.gapless.enabled=false \
+    vendor.audio.offload.multiple.enabled=false \
+    vendor.audio.offload.passthrough=false \
+    vendor.audio.offload.track.enable=true \
+    vendor.audio.parser.ip.buffer.size=262144 \
+    vendor.audio.playback.mch.downsample=true \
+    vendor.audio.safx.pbe.enabled=true \
+    vendor.audio.tunnel.encode=false \
     vendor.use.voice.path.for.pcm.voip=false
 
 # Bluetooth
