@@ -133,3 +133,12 @@
 
 # Files in Persist
 /persist(/.*)?           u:object_r:persist_file:s0
+
+# Files in dsp
+/dsp(/.*)?               u:object_r:adsprpcd_file:s0
+
+# Files in firmware
+/firmware(/.*)?          u:object_r:firmware_file:s0
+
+# Files in fsg
+/fsg(/.*)?               u:object_r:fsg_file:s0
