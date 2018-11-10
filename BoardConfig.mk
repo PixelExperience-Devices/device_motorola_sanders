@@ -198,6 +198,9 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 21073920    #    20580 * 1024 mmcblk0p38
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296    #  4194304 * 1024 mmcblk0p53
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25614597120 # 25014255 * 1024 mmcblk0p54
 BOARD_ROOT_EXTRA_SYMLINKS := \
+    /vendor/fsg:/fsg \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
 
 # Peripheral manager
