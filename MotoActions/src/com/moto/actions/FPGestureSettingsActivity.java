@@ -25,9 +25,13 @@ public class FPGestureSettingsActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null){
+
+        if (getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+            getActionBar().setTitle(R.string.fingerprint_gestures_title);
+        }
+
             getFragmentManager().beginTransaction()
                     .replace(android.R.id.content, new FPGestureSettingsFragment()).commit();
         }
     }
-}
