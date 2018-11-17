@@ -18,5 +18,5 @@
 package com.moto.actions.actions;
 
 public interface UpdatedStateNotifier {
-    public void updateState();
+    void updateState();
 }

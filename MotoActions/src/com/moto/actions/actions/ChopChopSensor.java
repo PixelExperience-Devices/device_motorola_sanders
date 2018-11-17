@@ -17,12 +17,9 @@
 
 package com.moto.actions.actions;
 
-import java.util.List;
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.util.Log;
 
 import com.moto.actions.MotoActionsSettings;
@@ -30,8 +27,6 @@ import com.moto.actions.SensorHelper;
 
 public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ChopChopSensor";
-
-    private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
 
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;

@@ -17,7 +17,6 @@
 package com.moto.actions;
 
 import android.os.Bundle;
-
 import android.preference.PreferenceActivity;
 
 public class DozeSettingsActivity extends PreferenceActivity {
@@ -25,9 +24,12 @@ public class DozeSettingsActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null){
-            getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new DozeSettingsFragment()).commit();
+        if (getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+            getActionBar().setTitle(R.string.ambient_display_title);
         }
+
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new DozeSettingsFragment()).commit();
     }
 }
