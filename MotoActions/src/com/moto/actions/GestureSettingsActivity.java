@@ -25,9 +25,12 @@ public class GestureSettingsActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null){
+
+        if (getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
             getFragmentManager().beginTransaction()
                     .replace(android.R.id.content, new GestureSettingsFragment()).commit();
         }
     }
-}

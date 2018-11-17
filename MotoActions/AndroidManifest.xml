@@ -7,16 +7,13 @@
     <original-package android:name="com.cyanogenmod.settings.device" />
 
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-
-    <uses-sdk
-        android:minSdkVersion="27"
-        android:targetSdkVersion="27" />
 
     <application
         android:allowBackup="true"

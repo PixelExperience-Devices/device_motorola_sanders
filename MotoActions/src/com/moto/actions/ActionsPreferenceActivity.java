@@ -17,7 +17,6 @@
 package com.moto.actions;
 
 import android.os.Bundle;
-
 import android.preference.PreferenceActivity;
 
 public class ActionsPreferenceActivity extends PreferenceActivity {
@@ -25,9 +24,12 @@ public class ActionsPreferenceActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null){
+
+        if (getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
             getFragmentManager().beginTransaction()
                     .replace(android.R.id.content, new ActionsPreferenceFragment()).commit();
         }
     }
-}
