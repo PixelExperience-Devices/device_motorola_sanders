@@ -30,7 +30,7 @@ import com.moto.actions.actions.UpdatedStateNotifier;
 import com.moto.actions.actions.CameraActivationAction;
 import com.moto.actions.actions.TorchAction;
 
-public class MotoActionsSettings {
+public class MotoActionsSettings implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "MotoActions";
 
     private static final String GESTURE_CAMERA_ACTION_KEY = "gesture_camera_action";
@@ -55,7 +55,7 @@ public class MotoActionsSettings {
     public MotoActionsSettings(Context context, UpdatedStateNotifier updatedStateNotifier) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         loadPreferences(sharedPrefs);
-        sharedPrefs.registerOnSharedPreferenceChangeListener(mPrefListener);
+        sharedPrefs.registerOnSharedPreferenceChangeListener(this);
         mContext = context;
         mUpdatedStateNotifier = updatedStateNotifier;
     }
@@ -114,8 +114,6 @@ public class MotoActionsSettings {
         mLiftToSilenceEnabled = sharedPreferences.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false);
     }
 
-    private SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
-            new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             boolean updated = true;
@@ -146,5 +144,4 @@ public class MotoActionsSettings {
                 mUpdatedStateNotifier.updateState();
             }
         }
-    };
 }

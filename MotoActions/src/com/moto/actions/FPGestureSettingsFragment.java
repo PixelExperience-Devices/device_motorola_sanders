@@ -48,14 +48,6 @@ public class FPGestureSettingsFragment extends PreferenceFragment {
     private Switch mFPGestureSwitch;
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        ActionBar actionbar = getActivity().getActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setTitle(R.string.fingerprint_gestures_title);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.fp_gesture, container, false);
