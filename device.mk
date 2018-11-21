@@ -112,6 +112,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
+# CarrierConfig
+PRODUCT_PACKAGES += \
+    CarrierConfig
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/mot_imx258_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_bear_chromatix.xml \
