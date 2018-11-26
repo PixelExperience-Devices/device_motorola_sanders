@@ -232,6 +232,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+PRODUCT_PACKAGES += \
+    qti-telephony-utils \
+    qti_telephony_utils.xml
+
 # IMS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager
