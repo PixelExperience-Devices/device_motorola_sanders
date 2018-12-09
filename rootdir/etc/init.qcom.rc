@@ -1013,3 +1013,6 @@ on property:sys.boot_completed=1
     #CPE fw_name used by sound trigger HAL
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
+on property:sys.boot_completed=1
+    setprop vendor.post_boot.parsed 1
+
