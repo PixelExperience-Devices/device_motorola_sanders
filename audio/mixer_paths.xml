@@ -852,8 +852,8 @@
 
 	<path name="headphones">
 		<ctl name="MI2S_RX Channels" value="Two" />
-		<ctl name="RX1 Digital Volume" value="77" />
-		<ctl name="RX2 Digital Volume" value="77" />
+		<ctl name="RX1 Digital Volume" value="86" />
+		<ctl name="RX2 Digital Volume" value="86" />
 		<ctl name="RX1 MIX1 INP1" value="RX1" />
 		<ctl name="RX2 MIX1 INP1" value="RX2" />
 		<ctl name="RX HPH Mode" value="HD2" />
