@@ -1,1 +1,3 @@
 allow tee persist_file:file r_file_perms;
+
+set_prop(tee, tee_listener_prop)
