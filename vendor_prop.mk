@@ -350,4 +350,7 @@ persist.radio.data_lte_sys_ind=1
 
 # SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.surface_flinger.protected_contents=true
+ro.surface_flinger.protected_contents=true \
+ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
+ro.surface_flinger.use_color_management=true
