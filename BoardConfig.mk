@@ -147,6 +147,7 @@ BOARD_NO_CHARGER_LED := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_USES_METADATA_AS_FDE_KEY := true
+TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT := true
