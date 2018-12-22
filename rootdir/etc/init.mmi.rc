@@ -73,8 +73,6 @@ on post-fs
     write /proc/sys/vm/page-cluster 0
 
 on post-fs-data
-    #setup folder for WLAN WAPI
-    chmod 0770 /data/wapi_certificate
 	
     # Setup folders for security
     mkdir /persist/security 02770 oem_5007 oem_5007
@@ -154,9 +152,6 @@ on post-fs-data
 
     # NFC vendor data
     mkdir /data/vendor/nfc 0770 nfc nfc
-
-    #setup folder for WLAN WAPI
-    chmod 0770 /data/wapi_certificate
 
     # Enable directory writer xattr for 2nd level directory /storage/emulated/xx/yy
     setfattr /data/media user.dwriter /%s/%s 0
@@ -301,6 +296,14 @@ on property:sys.wifi.tethering=true
 
 on property:sys.wifi.tethering=false
     write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${sys.rmnet_vnd.rps_mask}
+    write /sys/module/wlan/parameters/fwpath apdown
+
+#Override fwpath string when wpa_supplicant server was killed
+on property:init.svc.wpa_supplicant=running
+    write /sys/module/wlan/parameters/fwpath sta
+
+on property:init.svc.wpa_supplicant=stopped
+    write /sys/module/wlan/parameters/fwpath wpadown
 
 on property:ro.bootmode=normal
    write /sys/module/usb3813_hub/parameters/boost_val 3
