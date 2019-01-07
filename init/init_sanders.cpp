@@ -104,8 +104,8 @@ void vendor_load_properties()
     // rmt_storage
     std::string device = GetProperty("ro.boot.device", "");
     std::string radio = GetProperty("ro.boot.radio", "");
-    property_set("ro.hw.device", device.c_str());
-    property_set("ro.hw.radio", radio.c_str());
+    property_set("ro.vendor.hw.device", device.c_str());
+    property_set("ro.vendor.hw.radio", radio.c_str());
     property_set("ro.hw.fps", "true");
     property_set("ro.hw.imager", "13MP");
 
