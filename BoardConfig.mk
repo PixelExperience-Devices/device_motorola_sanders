@@ -218,6 +218,7 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 SELINUX_IGNORE_NEVERALLOWS := true
+TARGET_ENABLE_MEDIADRM_64 := true
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
