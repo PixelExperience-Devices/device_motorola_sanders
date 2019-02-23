@@ -48,8 +48,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-TARGET_USES_64_BIT_BINDER := true
-
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := sanders,sanders_retail
 
