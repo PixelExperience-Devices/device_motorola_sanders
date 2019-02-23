@@ -44,7 +44,6 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
-TARGET_USES_64_BIT_BINDER := true
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := sanders,sanders_retail
