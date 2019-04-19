@@ -18,6 +18,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libqsap_shim.c
 LOCAL_SHARED_LIBRARIES := libqsap_sdk liblog libcutils libutils
 LOCAL_C_INCLUDES := $(TOP)/system/qcom/softap/sdk
+LOCAL_C_FLAGS := -Wno-error
+LOCAL_HEADER_LIBRARIES := libutils_headers
 LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
