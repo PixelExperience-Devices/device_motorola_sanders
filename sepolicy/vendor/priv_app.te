@@ -3,3 +3,6 @@ allow priv_app persist_file:filesystem getattr;
 allow priv_app proc_interrupts:file { open read getattr };
 allow priv_app proc_modules:file { open read getattr };
 get_prop(priv_app, adspd_prop);
+allow priv_app sysfs:dir open;
+allow priv_app mnt_vendor_file:dir search;
+allow priv_app sysfs:file { getattr open read };
