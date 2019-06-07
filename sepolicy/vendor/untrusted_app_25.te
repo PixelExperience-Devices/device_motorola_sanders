@@ -4,6 +4,9 @@
 
 allow untrusted_app_25 init:unix_stream_socket { read write };
 
-allow untrusted_app_25 proc_stat:file read;
 allow untrusted_app_25 self:udp_socket ioctl;
 allow untrusted_app_25 vold_exec:file read;
+
+allow untrusted_app_25 device:dir read;
+allow untrusted_app_25 rootfs:dir { open read };
+allow untrusted_app_25 unlabeled:dir getattr;

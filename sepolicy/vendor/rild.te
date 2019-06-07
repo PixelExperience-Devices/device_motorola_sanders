@@ -1,19 +1,11 @@
-# binder_call(rild, servicemanager);
 binder_call(rild, audioserver_service);
 binder_call(rild, system_server);
-# allow rild per_mgr_service_old:service_manager find;
 set_prop(rild, diag_prop);
-allow rild nv_data_file:dir rw_dir_perms;
-allow rild nv_data_file:file create_file_perms;
-allow rild radio_data_file:dir rw_dir_perms;
-allow rild radio_data_file:file create_file_perms;
 allow rild fsg_file:file { getattr open read };
 allow rild fsg_file:dir { search open read };
 allow rild fsg_file:lnk_file read;
 
-allow rild cutback_data_file:dir rw_dir_perms;
-allow rild cutback_data_file:sock_file create_file_perms;
-
 allow rild rild_exec:file execute_no_trans;
 
 allow rild fwk_sensor_hwservice:hwservice_manager find;
+allow rild default_android_vndservice:service_manager { add find };
