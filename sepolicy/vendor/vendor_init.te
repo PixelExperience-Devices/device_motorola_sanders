@@ -1,0 +1,18 @@
+allow vendor_init camera_data_file:dir { create setattr };
+allow vendor_init media_rw_data_file:file { getattr relabelfrom };
+allow vendor_init media_rw_data_file:dir setattr;
+allow vendor_init rootfs:dir { add_name write };
+allow vendor_init system_data_file:dir { add_name create setattr write };
+allow vendor_init adsprpcd_file:lnk_file create;
+allow vendor_init firmware_file:lnk_file create;
+allow vendor_init tombstone_data_file:dir { add_name create search setattr write };
+allow vendor_init cutback_data_file:dir { create setattr };
+allow vendor_init dbvc_data_file:dir { create setattr };
+allow vendor_init moodle_data_file:dir { create setattr };
+allow vendor_init sds_data_file:dir { create setattr };
+allow vendor_init wapi_supplicant_data_file:dir { create setattr };
+allow vendor_init fingerprintd_data_file:dir { create setattr };
+allow vendor_init adspd_data_file:dir setattr;
+allow vendor_init usermodehelper:file write;
+allow vendor_init netmgr_data_file:dir { create setattr };
+allow vendor_init adspd_data_file:dir create;
