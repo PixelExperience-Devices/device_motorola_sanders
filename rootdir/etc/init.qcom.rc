@@ -35,6 +35,7 @@ on early-init
   # create symlink for vendor mount points
     symlink /vendor/firmware_mnt /firmware
     symlink /vendor/dsp /dsp
+    symlink /vendor/fsg /fsg
 
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
