@@ -13,6 +13,7 @@ lib/motorola.hardware.camera.provider@2.4.so
 lib/libmot_lux_standardization.so:vendor/lib/libmot_lux_standardization.so
 lib/lib_mot_app6_metadata.so:vendor/lib/lib_mot_app6_metadata.so
 lib/lib_motsensorlistener.so:vendor/lib/lib_motsensorlistener.so
+vendor/lib/camera.device@1.0-impl.so|13a93ca1a2e58e813f32f0c6348f6c1ad7937454
 vendor/lib/libmotocalibration.so
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/libgralloc1.so
