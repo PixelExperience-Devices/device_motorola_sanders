@@ -71,11 +71,6 @@ void num_sims() {
 
 void vendor_load_properties()
 {
-    std::string platform = GetProperty("ro.board.platform", "");
-
-    if (platform != ANDROID_TARGET)
-        return;
-
     // camera (treble)
     property_override("ro.product.manufacturer", "motorola");
     property_override("ro.build.product", "sanders");
@@ -92,7 +87,7 @@ void vendor_load_properties()
     property_set("ro.hw.device", device.c_str());
     property_set("ro.hw.radio", radio.c_str());
     property_set("ro.hw.fps", "true");
-    property_set("ro.hw.imager", "12MP");
+    property_set("ro.hw.imager", "13MP");
 
     num_sims();
 }
