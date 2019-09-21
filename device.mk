@@ -328,6 +328,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
 
+# Charger Images
+PRODUCT_PACKAGES += charger_res_images
+
 # Powerhint configuration file
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/powerhint.xml:system/etc/powerhint.xml
