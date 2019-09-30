@@ -2,6 +2,8 @@
 #binder_call(init, hwservicemanager);
 # binder_call(init, servicemanager);
 
+add_hwservice( init, hal_camera_hwservice);
+
 allow init hwservicemanager:binder call;
 allow init mm-qcamerad:binder transfer;
 allow init platform_app:binder transfer;
@@ -45,9 +47,20 @@ allow init self:netlink_route_socket { bind create getopt nlmsg_read read setopt
 allow init self:capability2 { block_suspend };
 
 allow init hal_sensors_hwservice:hwservice_manager find;
-
 allow init { domain -lmkd -crash_dump }:process noatsecure;
-
 allow init hal_perf_hwservice:hwservice_manager find;
 allow init hidl_base_hwservice:hwservice_manager add;
+allow init hidl_allocator_hwservice:hwservice_manager { find };
+allow init hal_graphics_mapper_hwservice:hwservice_manager { find };
+allow init hal_bluetooth_hwservice:hwservice_manager { find };
+allow init hidl_base_hwservice:hwservice_manager { add };
+allow init hal_gnss_hwservice:hwservice_manager { find };
+allow init system_net_netd_hwservice:hwservice_manager { find };
+allow init default_android_hwservice:hwservice_manager { add find };
+allow init hal_camera_hwservice:hwservice_manager add;
+allow init hal_fingerprint_hwservice:hwservice_manager add;
 
+allow init sysfs:file setattr;
+allow init system_file:dir relabelfrom;
+allow init shell_exec:file execute_no_trans;
+allow init system_file:file relabelfrom;

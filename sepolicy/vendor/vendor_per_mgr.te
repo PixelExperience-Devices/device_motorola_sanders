@@ -1,0 +1,2 @@
+allow vendor_per_mgr unlabeled:dir search;
+allow vendor_per_mgr unlabeled:file { open read };

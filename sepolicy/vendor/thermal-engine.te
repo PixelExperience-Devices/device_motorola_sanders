@@ -6,3 +6,6 @@ allow thermal-engine sysfs_uio:file r_file_perms;
 allow thermal-engine sysfs_uio:dir { read open search };
 allow thermal-engine sysfs_uio:lnk_file { read };
 allow thermal-engine sysfs_vadc_dev:lnk_file { read open };
+
+allow thermal-engine self:capability { dac_override dac_read_search };
+allow thermal-engine sysfs_vadc_dev:dir search;

@@ -1,11 +1,26 @@
 binder_call(rild, audioserver_service);
 binder_call(rild, system_server);
 set_prop(rild, diag_prop);
+set_prop(rild, system_radio_prop)
 allow rild fsg_file:file { getattr open read };
 allow rild fsg_file:dir { search open read };
 allow rild fsg_file:lnk_file read;
 
 allow rild rild_exec:file execute_no_trans;
-
 allow rild fwk_sensor_hwservice:hwservice_manager find;
-allow rild default_android_vndservice:service_manager { add find };
+
+allow rild cutback_data_file:sock_file { create setattr unlink write };
+allow rild cutback_data_file:dir { add_name open read remove_name search write };
+allow rild unlabeled:dir { getattr search };
+allow rild vendor_file:file execute_no_trans;
+allow rild proc:file { open read };
+allow rild unlabeled:file { getattr open read };
+allow rild unlabeled:dir { getattr open read };
+allow rild mnt_vendor_file:dir search;
+allow rild vendor_toolbox_exec:file execute_no_trans;
+allow rild mnt_vendor_file:file { open read write };
+allow rild unlabeled:lnk_file read;
+allow rild qcom_ims_prop:property_service { set };
+
+dontaudit rild tombstone_data_file:dir { search };
+dontaudit rild vendor_file:file { ioctl };

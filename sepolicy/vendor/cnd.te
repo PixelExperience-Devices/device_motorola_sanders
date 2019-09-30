@@ -1,2 +1,2 @@
 allow cnd diag_device:chr_file { read write };
-allow cnd self:capability { net_raw };
+allow cnd self:capability { chown dac_override fsetid net_raw };

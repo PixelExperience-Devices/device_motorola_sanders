@@ -51,3 +51,7 @@ allow cameraserver sysfs_battery_supply:dir search;
 allow cameraserver sysfs_battery_supply:file { getattr open read };
 
 allow cameraserver camera_bgproc_service:service_manager { add find };
+allow cameraserver self:netlink_kobject_uevent_socket { read bind create setopt };
+allow cameraserver default_android_service:service_manager find;
+allow cameraserver rootfs:lnk_file getattr;
+allow cameraserver init:unix_dgram_socket { sendto };

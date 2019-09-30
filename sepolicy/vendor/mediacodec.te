@@ -1,1 +1,3 @@
 allow mediacodec firmware_file:file { open read };
+allow mediacodec unlabeled:dir search;
+allow mediacodec unlabeled:file { open read };

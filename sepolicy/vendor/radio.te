@@ -1,4 +1,4 @@
 allow radio system_app_data_file:dir getattr;
 allow radio qmuxd_socket:sock_file write;
 
-allow radio vendor_file:file { getattr open read };
+allow radio vendor_file:file { execute getattr open read };
