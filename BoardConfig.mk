@@ -226,6 +226,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Temp
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
