@@ -366,6 +366,7 @@ PRODUCT_PACKAGES += \
     init.mmi.boot.sh \
     init.mmi.rc \
     init.recovery.qcom.rc \
+    init.sanders.rc \
     init.mmi.usb.rc \
     init.safailnet.rc \
     init.qcom.rc \
