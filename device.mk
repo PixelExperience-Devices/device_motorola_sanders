@@ -350,6 +350,7 @@ PRODUCT_PACKAGES += \
     init.mmi.boot.sh \
     init.mmi.rc \
     init.recovery.qcom.rc \
+    init.sanders.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
     init.qcom.sensors.sh
