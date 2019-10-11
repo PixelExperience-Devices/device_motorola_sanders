@@ -226,10 +226,6 @@
         on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- Enable overlay for all location components. -->
-    <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
-    <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-
     <!-- Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
 
