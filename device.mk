@@ -340,6 +340,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
+
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.qti.va_odm.support=1
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.fm.sh \
