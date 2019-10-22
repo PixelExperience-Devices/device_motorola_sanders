@@ -281,7 +281,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.cs_srv_type=1 \
     persist.dbg.ims_volte_enable=1 \
     persist.data.qmi.adb_logmask=0 \
-    telephony.lteOnCdmaDevice=1
+    telephony.lteOnCdmaDevice=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
