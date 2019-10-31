@@ -3,3 +3,5 @@ allow ueventd sysfs_mmi_fp:file w_file_perms;
 allow ueventd synaptics_rmi_device:chr_file { rw_file_perms relabelfrom relabelto};
 allow ueventd sysfs_fpc:file rw_file_perms;
 allow ueventd sysfs_sensors:file rw_file_perms;
+allow ueventd unlabeled:dir search;
+allow ueventd unlabeled:file { getattr open read };

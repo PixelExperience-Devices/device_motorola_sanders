@@ -6,10 +6,6 @@ allow perfd cgroup:file r_file_perms;
 
 allow perfd cameraserver:process signull;
 
-# files in /data/misc/perfd and /data/system/perfd
-allow perfd perfd_data_file:dir create_dir_perms;
-allow perfd perfd_data_file:{ file sock_file } create_file_perms;
-
 allow perfd proc_kernel_sched:file r_file_perms;
 
 # read access /sys
