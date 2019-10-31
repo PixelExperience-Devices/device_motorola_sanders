@@ -1,7 +1,0 @@
-# binder_call(qseeproxy, servicemanager);
-allow qseeproxy self:process getattr;
-allow qseeproxy default_android_service:service_manager { add };
-# allow qseeproxy qseeproxy_service_old:service_manager { add find };
-add_service(qseeproxy, qseeproxy_service);
-allow qseeproxy binder_device:chr_file { ioctl open read write };
-allow qseeproxy servicemanager:binder { call transfer };

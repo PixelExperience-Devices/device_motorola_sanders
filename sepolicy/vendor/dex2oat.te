@@ -1,1 +1,0 @@
-allow dex2oat adb_data_file:file read;

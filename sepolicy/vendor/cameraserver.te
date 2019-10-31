@@ -32,8 +32,6 @@ allow cameraserver debug_prop:property_service set;
 #allow cameraserver persist_file:file rw_file_perms;
 #allow cameraserver persist_file:file setattr;
 allow cameraserver shell_exec:file { read open execute };
-allow cameraserver self:socket create;
-allow cameraserver camera_prop:property_service set;
 allow cameraserver init:unix_stream_socket connectto;
 allow cameraserver property_socket:sock_file write;
 #allow cameraserver cameraserver:socket { { getattr read ioctl lock } { append write lock } };
