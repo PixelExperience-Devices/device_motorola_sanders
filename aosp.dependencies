@@ -1,0 +1,18 @@
+[
+  {
+    "repository":  "kernel_motorola_sanders",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "ten"
+  },
+  {
+    "repository": "vendor_motorola",
+    "target_path": "vendor/motorola",
+    "branch": "ten"
+  },
+  {
+    "remote": "lineage",
+    "repository": "android_system_qcom",
+    "target_path": "system/qcom",
+    "branch": "lineage-17.1"
+  }
+]
