@@ -17,10 +17,10 @@
 package com.moto.actions;
 
 import android.os.Bundle;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragment;
 import android.provider.Settings;
-import android.support.v7.preference.Preference;
-import android.support.v14.preference.SwitchPreference;
+import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
 import android.view.MenuItem;
 import android.view.LayoutInflater;
 import android.view.View;
