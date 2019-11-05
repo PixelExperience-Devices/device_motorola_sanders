@@ -455,4 +455,7 @@
     <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
     <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
 
+    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+    <bool name="config_cleanupUnusedFingerprints">false</bool>
+
 </resources>
