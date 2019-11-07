@@ -40,9 +40,11 @@ PRODUCT_MANUFACTURER := motorola
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
+PRODUCT_MODEL := Moto G (5S) Plus
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="Moto G5S Plus" \
-    PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
+    PRODUCT_NAME="Moto G (5S) Plus" \
+    PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPPS28.65-36-11-4 b6557 release-keys"
 
 # FINGERPRINT
 BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys 
