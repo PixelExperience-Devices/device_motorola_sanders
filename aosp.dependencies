@@ -14,5 +14,11 @@
     "repository": "android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings",
     "branch": "lineage-17.0"
+  },
+  {
+    "remote": "lineage",
+    "repository": "android_system_qcom",
+    "target_path": "system/qcom",
+    "branch": "lineage-17.0"
   }
 ]
