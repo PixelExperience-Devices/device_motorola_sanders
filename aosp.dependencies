@@ -1,8 +1,8 @@
 [
   {
-    "repository":  "Jorg3Lucas/android_kernel_motorola_msm8953",
+    "repository":  "Jorg3Lucas/kernel_motorola_msm8953",
     "target_path": "kernel/motorola/msm8953",
-    "branch": "ten"
+    "branch": "perf+"
   },
   {
     "repository": "vendor_motorola_sanders",
