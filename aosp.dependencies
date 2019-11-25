@@ -13,5 +13,11 @@
     "repository": "LineageOS/android_system_qcom",
     "target_path": "system/qcom",
     "branch": "lineage-17.0"
+  },
+  {
+    "repository": "packages_apps_WallpapersBReel2019",
+    "target_path": "packages/apps/WallpapersBReel2019",
+    "branch": "ten",
+    "remote": "pixel-gitlab"
   }
 ]
