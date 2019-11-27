@@ -480,4 +480,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Wallpapers
 PRODUCT_PACKAGES += \
-    WallpapersBReel2019
+    PixelLiveWallpaperPrebuilt
