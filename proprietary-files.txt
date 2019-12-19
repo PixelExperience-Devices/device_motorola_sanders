@@ -178,7 +178,6 @@ vendor/lib/egl/libQTapGLES.so
 vendor/lib/hw/flp.default.so
 vendor/lib/hw/gatekeeper.msm8953.so
 vendor/lib/hw/keystore.msm8953.so
-vendor/lib/hw/vulkan.msm8953.so
 vendor/lib/lib_drplugin_server.so
 vendor/lib/lib_remote_simlock.so
 vendor/lib/libacdb-fts.so
@@ -795,3 +794,7 @@ vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
 vendor/qcril.db
 vendor/lib/camera.device@1.0-impl.so|13a93ca1a2e58e813f32f0c6348f6c1ad7937454
+
+# Graphics - Vulkan - from LA.UM.8.6.r1-01900-89xx.0
+vendor/lib/hw/vulkan.msm8953.so|05ccd07ced4f12f8474a1298fbad6790e0436062
+vendor/lib64/hw/vulkan.msm8953.so|f50aea297c956bf22eaf7ee07e3b4e2b524967b4
