@@ -38,13 +38,14 @@ group: AID_BLUETOOTH
 caps: NET_BIND_SERVICE
 
 [vendor/bin/imsdatadaemon]
-user: AID_SYSTEM
-group: AID_SYSTEM
 mode: 0755
+user: AID_RADIO
+group: AID_RADIO
 caps: NET_BIND_SERVICE
 
 [vendor/bin/ims_rtp_daemon]
-user: AID_SYSTEM
+mode: 0755
+user: AID_RADIO
 group: AID_RADIO
 mode: 0755
 caps: NET_BIND_SERVICE
@@ -54,6 +55,12 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
+
+[vendor/bin/imsrcsd]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
 
 [vendor/bin/cnd]
 mode: 0755
