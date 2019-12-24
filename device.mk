@@ -16,6 +16,9 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# GoogleCamera
+$(call inherit-product-if-exists, packages/apps/GoogleCamera/gcam.mk)
+
 # Vendor properties
 -include device/motorola/sanders/vendor_prop.mk
 

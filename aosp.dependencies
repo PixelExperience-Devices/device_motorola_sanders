@@ -10,6 +10,11 @@
     "branch": "ten-wip"
   },
   {
+    "repository": "faham1997/packages_apps_GoogleCamera_lavender",
+    "target_path": "packages/apps/GoogleCamera",
+    "branch": "ten"
+  },
+  {
     "remote": "lineage",
     "repository": "android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings",
