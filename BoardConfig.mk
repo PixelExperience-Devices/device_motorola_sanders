@@ -152,9 +152,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_USES_METADATA_AS_FDE_KEY := true
 TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
-# Enable dexpreopt to speed boot time
-WITH_DEXPREOPT := true
-
 # Display
 BOARD_USES_ADRENO := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
