@@ -150,9 +150,6 @@ BOARD_NO_CHARGER_LED := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Enable dexpreopt to speed boot time
-WITH_DEXPREOPT := true
-
 # Display
 BOARD_USES_ADRENO := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
