@@ -397,9 +397,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0
 
-# Preopt SystemUI
+# AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+    SystemUI \
+    NexusLauncherRelease
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
