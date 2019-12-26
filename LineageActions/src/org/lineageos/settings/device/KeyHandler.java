@@ -30,9 +30,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
@@ -67,8 +64,6 @@ import org.lineageos.settings.device.util.FileUtils;
 
 import java.util.List;
 
-import lineageos.providers.LineageSettings;
-
 import static org.lineageos.settings.device.actions.Constants.*;
 
 public class KeyHandler implements DeviceKeyHandler {
@@ -89,18 +84,13 @@ public class KeyHandler implements DeviceKeyHandler {
             .build();
     private final Context mContext;
     private final PowerManager mPowerManager;
-    WakeLock mProximityWakeLock;
     WakeLock mGestureWakeLock;
     private KeyguardManager mKeyguardManager;
     private FPScreenOffGesturesHandler mFPScreenOffGesturesHandler;
-    private SensorManager mSensorManager;
     private CameraManager mCameraManager;
     private String mRearCameraId;
     private boolean mTorchEnabled;
-    private Sensor mProximitySensor;
     private Vibrator mVibrator;
-    private int mProximityTimeOut;
-    private boolean mProximityWakeSupported;
     private ISearchManager mSearchManagerService;
     private Handler mHandler;
     private int fpTapCounts = 0;
@@ -140,19 +130,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
-
-        final Resources resources = mContext.getResources();
-        mProximityTimeOut = resources.getInteger(
-                org.lineageos.platform.internal.R.integer.config_proximityCheckTimeout);
-        mProximityWakeSupported = resources.getBoolean(
-                org.lineageos.platform.internal.R.bool.config_proximityCheckOnWake);
-
-        if (mProximityWakeSupported) {
-            mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-            mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-            mProximityWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                    "ProximityWakeLock");
-        }
 
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
@@ -419,14 +396,6 @@ public class KeyHandler implements DeviceKeyHandler {
         return !FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_HAPTIC_NODE)).equals("0");
     }
 
-    private boolean isProximityEnabledOnScreenOffGesturesFP() {
-        return !FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_PROXIMITY_CHECK_SCREENOFF_NODE)).equals("0");
-    }
-
-    private boolean isProximityEnabledOnScreenOffGestures() {
-        return Settings.System.getInt(mContext.getContentResolver(), KEY_GESTURE_ENABLE_PROXIMITY_SENSOR, 1) != 0;
-    }
-
     private String getFPNodeBasedOnScreenState(String node) {
         if (mPowerManager.isScreenOn()) {
             return node;
@@ -663,50 +632,12 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private void processFPScreenOffScancode(int scanCode) {
-        if (isProximityEnabledOnScreenOffGesturesFP() && !mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
+        if (!mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
             Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
             msg.arg1 = scanCode;
-            boolean defaultProximity = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-            boolean proximityWakeCheckEnabled = LineageSettings.System.getInt(mContext.getContentResolver(),
-                    LineageSettings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
-            if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
-                mFPScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
-                registerFPScreenOffListener(scanCode);
-            } else {
                 mFPScreenOffGesturesHandler.sendMessage(msg);
             }
-        }else{
-            processFPScancode(scanCode);
         }
-    }
-
-    private void registerFPScreenOffListener(final int scanCode) {
-        mProximityWakeLock.acquire();
-        mSensorManager.registerListener(new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                mProximityWakeLock.release();
-                mSensorManager.unregisterListener(this);
-                if (!mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
-                    // The sensor took to long, ignoring.
-                    return;
-                }
-                mFPScreenOffGesturesHandler.removeMessages(FP_ACTION_REQUEST);
-                if (event.values[0] == mProximitySensor.getMaximumRange()) {
-                    Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
-                    msg.arg1 = scanCode;
-                    mFPScreenOffGesturesHandler.sendMessage(msg);
-                }
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-            }
-
-        }, mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
-    }
-
 
     private void resetFPGestureDelay() {
         fpGesturePending = false;
@@ -794,7 +725,7 @@ public class KeyHandler implements DeviceKeyHandler {
                     owningUid = android.os.Process.myUid();
                     owningPackage = mContext.getOpPackageName();
                     VibrationEffect effect = VibrationEffect.createOneShot(longpress ? 50 : 40, VibrationEffect.DEFAULT_AMPLITUDE);
-                    mVibrator.vibrate(owningUid, owningPackage, effect, VIBRATION_ATTRIBUTES);
+                    mVibrator.vibrate(owningUid, owningPackage, effect,null, VIBRATION_ATTRIBUTES);
                 }
             });
         }

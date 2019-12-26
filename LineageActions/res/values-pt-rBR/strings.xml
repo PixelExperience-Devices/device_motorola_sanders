@@ -88,8 +88,4 @@
    <!-- Screen off gestures haptic feedback -->
    <string name="haptic_feedback">Retorno tátil</string>
    <string name="haptic_feedback_summary">Vibrar quando um gesto for detectado</string>
-   
-   <!-- Proximity sensor -->
-   <string name="allow_proximity_sensor_title">Habilitar o sensor de proximidade</string>
-   <string name="allow_proximity_sensor_summary">Verificar o sensor de proximidade antes de executar a ação</string>
 </resources>

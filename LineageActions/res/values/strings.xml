@@ -88,9 +88,4 @@
    <!-- Screen off gestures haptic feedback -->
    <string name="haptic_feedback">Haptic feedback</string>
    <string name="haptic_feedback_summary">Vibrate when a touchscreen gesture is detected</string>
-   
-   <!-- Proximity sensor -->
-   <string name="allow_proximity_sensor_title">Allow proximity sensor</string>
-   <string name="allow_proximity_sensor_summary">Check the proximity sensor before performing the action</string>
-
 </resources>
