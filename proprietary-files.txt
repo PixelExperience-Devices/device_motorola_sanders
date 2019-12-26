@@ -150,6 +150,8 @@ lib/libqmimotext.so
 lib/libqomx_core.so
 -lib/libril.so
 lib/libsensorhub.so
+vendor/lib64/libsecureui.so|faebf24607e983faa09d27df36408dab2db2217e
+vendor/lib64/libspl.so|5443114db96c1a534e6a338dec895af26dd9d863
 lib/libYuvSkia.so
 -priv-app/atfwd/atfwd.apk
 -priv-app/CNEService/CNEService.apk
