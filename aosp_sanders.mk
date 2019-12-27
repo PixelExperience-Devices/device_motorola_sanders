@@ -24,16 +24,11 @@ $(call inherit-product, device/motorola/sanders/device.mk)
 # Inherit from Sanders-Vendor
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
 
-# Inherit some common AOSP stuff.
+# Inherit some common PixelExperience stuff
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-
-# GApps
-TARGET_GAPPS_ARCH := arm64
-
-# Boot animation
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
