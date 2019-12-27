@@ -80,6 +80,11 @@
             android:theme="@style/LineageActions">
         </activity>
 
+        <activity
+            android:name=".FPGestureSettingsActivity"
+            android:label="@string/fingerprint_gestures_title"
+            android:theme="@style/LineageActions">
+        </activity>
     </application>
 
 </manifest>

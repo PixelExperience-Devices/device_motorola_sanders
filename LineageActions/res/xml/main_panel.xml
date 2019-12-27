@@ -38,4 +38,14 @@
                 android:targetClass="org.lineageos.settings.device.DozeSettingsActivity" />
     </Preference>
 
+    <Preference
+        android:key="fp_gestures"
+        android:title="@string/fingerprint_gestures_title"
+        android:summary="@string/fingerprint_gestures_manage_summary"
+        android:icon="@drawable/ic_settings_fingerprint">
+            <intent
+                android:targetPackage="org.lineageos.settings.device"
+                android:targetClass="org.lineageos.settings.device.FPGestureSettingsActivity" />
+    </Preference>
+
 </PreferenceScreen>
