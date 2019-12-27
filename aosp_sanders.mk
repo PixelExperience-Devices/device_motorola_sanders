@@ -50,5 +50,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPPS28.65-36-11-4 b6557 release-keys"
 
 # FINGERPRINT
-BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys 
-VENDOR_BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys
+BUILD_FINGERPRINT := google/coral/coral:10/QQ1B.191205.011/5974828:user/release-keys
+VENDOR_BUILD_FINGERPRINT := google/coral/coral:10/QQ1B.191205.011/5974828:user/release-keys
