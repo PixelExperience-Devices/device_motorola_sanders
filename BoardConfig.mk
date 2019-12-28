@@ -221,7 +221,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Temp
