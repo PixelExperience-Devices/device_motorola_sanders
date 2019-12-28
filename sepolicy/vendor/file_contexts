@@ -1,4 +1,5 @@
 # ADSP
+/sys/kernel/aov(/.*)?                                    u:object_r:sysfs_adsp:s0
 /data/adspd(/.*)?                                        u:object_r:adspd_data_file:s0
 
 # AMPS
@@ -42,6 +43,7 @@
 /persist/captouch_(.*)?                                  u:object_r:persist_antcap_file:s0
 /persist/telephony(/.*)?                                 u:object_r:pds_telephony_file:s0
 /persist/public/telephony(/.*)?                          u:object_r:pds_telephony_file:s0
+/persist/public/omadm(/.*)?                              u:object_r:pds_omadm_file:s0
 /persist/factory/audio(/.*)?                             u:object_r:persist_audio_file:s0
 /persist/\.bt_nv\.bin                                    u:object_r:bluetooth_data_file:s0
 
@@ -99,6 +101,7 @@
 /data/misc/netmgr(/.*)?                                  u:object_r:netmgr_data_file:s0
 
 # Sensors
+/dev/mmi_sys_temp                                        u:object_r:thermal_device:s0
 /dev/motosh                                              u:object_r:sensors_device:s0
 /dev/motosh_as                                           u:object_r:sensors_device:s0
 /dev/motosh_ms                                           u:object_r:sensors_device:s0
@@ -114,6 +117,7 @@
 
 /data/misc/perfd(/.*)?                                          u:object_r:perfd_data_file:s0
 /data/system/perfd(/.*)?                                        u:object_r:perfd_data_file:s0
+/data/oemnvitems(/.*)?                                          u:object_r:nv_data_file:s0
 
 /system/vendor/bin/perfd           u:object_r:perfd_exec:s0
 /system/vendor/bin/hw/android\.hardware\.power@1\.1-service-qti          u:object_r:hal_power_default_exec:s0
