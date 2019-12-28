@@ -6,6 +6,7 @@
 bin/adspd
 bin/adsprpcd
 bin/btnvtool
+bin/charge_only_mode
 bin/cnd
 bin/hci_qcomm_init
 bin/ims_rtp_daemon
