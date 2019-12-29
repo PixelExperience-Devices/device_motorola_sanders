@@ -1,6 +1,5 @@
 allow netmgrd toolbox_exec:file { getattr read open };
-
 allow netmgrd init:unix_stream_socket connectto;
 allow netmgrd property_socket:sock_file write;
-allow netmgrd system_file:file lock;
+allow netmgrd system_file:file { execute lock };
 allow netmgrd default_prop:property_service set;
