@@ -1,8 +1,8 @@
 [
   {
-    "repository":  "Jorg3Lucas/kernel_motorola_msm8953",
+    "repository":  "kernel_motorola_msm8953",
     "target_path": "kernel/motorola/msm8953",
-    "branch": "perf+"
+    "branch": "ten"
   },
   {
     "repository": "vendor_motorola_sanders",
@@ -10,14 +10,12 @@
     "branch": "ten"
   },
   {
-    "remote": "lineage",
-    "repository": "android_packages_resources_devicesettings",
+    "repository": "LineageOS/android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings",
     "branch": "lineage-17.0"
   },
   {
-    "remote": "lineage",
-    "repository": "android_system_qcom",
+    "repository": "LineageOS/android_system_qcom",
     "target_path": "system/qcom",
     "branch": "lineage-17.0"
   }
