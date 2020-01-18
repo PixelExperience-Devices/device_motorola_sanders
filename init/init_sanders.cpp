@@ -78,8 +78,10 @@ void vendor_load_properties()
     property_override("ro.product.name", "sanders_retail");
 
     // sku
-    std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
+    std::string sku = "Moto G (5S) Plus (";
+    sku.append(android::base::GetProperty("ro.boot.hardware.sku", ""));
+    sku.append(")");
+    property_override_dual("ro.product.model","ro.vendor.product.model", sku.c_str());
 
     // fingerprint
     property_override("ro.build.description", "sanders-user 8.1.0 OPPS28.65-36-11-4 b6557 release-keys");
