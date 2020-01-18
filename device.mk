@@ -416,10 +416,6 @@ PRODUCT_PACKAGES += \
     libqsap_shim \
     libgpu_mapper_shim
 
-# Soong
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
