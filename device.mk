@@ -349,8 +349,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
-    init.qcom.sensors.sh \
-    init.sanders.rc
+    init.qcom.sensors.sh
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
