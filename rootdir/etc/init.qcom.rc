@@ -650,9 +650,6 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
-on property:ro.hw.ecompass=true
-    enable ecompassd
-
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
     group radio system wakelock
@@ -736,9 +733,6 @@ service iprenew_wigig0 /system/bin/dhcpcd -n
     class late_start
     disabled
     oneshot
-
-on property:ro.hw.dtv=true
-    insmod /vendor/lib/modules/isdbt.ko
 
 service wlan_logging /system/bin/cnss_diag -q -f
     class main

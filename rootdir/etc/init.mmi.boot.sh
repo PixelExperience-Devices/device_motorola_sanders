@@ -43,4 +43,5 @@ if [ -f /sys/devices/soc0/select_image ]; then
     echo $oem_version > /sys/devices/soc0/image_crm_version
 fi
 
-
+enable ecompassd
+insmod /vendor/lib/modules/isdbt.ko
