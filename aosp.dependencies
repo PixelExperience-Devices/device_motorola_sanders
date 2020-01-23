@@ -1,18 +1,13 @@
 [
   {
-    "repository":  "kernel_motorola_msm8953",
-    "target_path": "kernel/motorola/msm8953",
+    "repository":  "kernel_motorola_sanders",
+    "target_path": "kernel/motorola/sanders",
     "branch": "ten"
   },
   {
-    "repository": "vendor_motorola_sanders",
-    "target_path": "vendor/motorola/sanders",
+    "repository": "vendor_motorola",
+    "target_path": "vendor/motorola",
     "branch": "ten"
-  },
-  {
-    "repository": "LineageOS/android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings",
-    "branch": "lineage-17.0"
   },
   {
     "repository": "LineageOS/android_system_qcom",
