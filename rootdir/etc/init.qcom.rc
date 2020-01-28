@@ -735,6 +735,9 @@ service iprenew_wigig0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
+on property:ro.boot.hardware.sku=XT1802
+    insmod /vendor/lib/modules/isdbt.ko
+
 service wlan_logging /system/bin/cnss_diag -q -f
     class main
     user system
