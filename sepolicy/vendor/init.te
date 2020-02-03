@@ -64,3 +64,5 @@ allow init sysfs:file setattr;
 allow init system_file:dir relabelfrom;
 allow init shell_exec:file execute_no_trans;
 allow init system_file:file relabelfrom;
+
+allow init vendor_file:file { execute };
