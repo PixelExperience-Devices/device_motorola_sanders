@@ -173,7 +173,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
-    media.settings.xml=/vendor/etc/media_profiles.xml \
     mm.enable.qcom_parser=135715 \
     mm.enable.sec.smoothstreaming=false \
     mm.enable.smoothstreaming=false \
