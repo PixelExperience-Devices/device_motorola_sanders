@@ -655,7 +655,7 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
-on property:ro.hw.ecompass=true
+on property:ro.boot.hardware.sku=XT1806
     enable ecompassd
 
 service vendor.netmgrd /vendor/bin/netmgrd
