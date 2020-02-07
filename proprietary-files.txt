@@ -642,7 +642,6 @@ vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqisl.so
 vendor/lib/libqmi.so
-vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
@@ -798,3 +797,7 @@ vendor/bin/thermal-engine|37ef9d9d7180d1508096668047e7fd98b8a25b39
 vendor/lib/libthermalclient.so|5366dedac700727f05ed1729bf00c855d0777de4
 vendor/lib64/libthermalclient.so|fead3fb780b175ef478c7ab120639dea5b37a802
 vendor/lib64/libthermalioctl.so|1d6587245c7e7148638f14254e2f61f6b5552857
+
+# QMI - from LA.UM.8.6.r1-02600-89xx.0
+vendor/lib/libqmi_cci.so|df2e1f83ef1243efd3b15f98351f1407d32d5956
+vendor/lib64/libqmi_cci.so|9e066cc4ceb721413db7e9a322836de981e92c74
