@@ -2,7 +2,6 @@
 
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
--app/TimeService/TimeService.apk
 bin/adspd
 bin/adsprpcd
 bin/btnvtool
@@ -27,7 +26,6 @@ bin/rild
 bin/rmt_storage
 bin/ssr_setup
 bin/tftp_server
-bin/time_daemon
 etc/acdbdata/Bluetooth_cal.acdb
 etc/acdbdata/General_cal.acdb
 etc/acdbdata/Global_cal.acdb
@@ -727,7 +725,6 @@ vendor/lib/libStDrvInt.so
 vendor/lib/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
 vendor/lib/libsystem_health_mon.so
--vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libts_detected_face_hal.so
@@ -801,3 +798,9 @@ vendor/lib64/libthermalioctl.so|1d6587245c7e7148638f14254e2f61f6b5552857
 # QMI - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib/libqmi_cci.so|df2e1f83ef1243efd3b15f98351f1407d32d5956
 vendor/lib64/libqmi_cci.so|9e066cc4ceb721413db7e9a322836de981e92c74
+
+# Time service - from LA.UM.8.6.r1-01900-89xx.0
+vendor/app/TimeService/TimeService.apk|4a37afd1395758d946580af184a738e3c657b1e2
+vendor/bin/time_daemon|fa1b87481313fc039d969c1ac7c06c77422ff38e
+vendor/lib/libtime_genoff.so|a574d287e7e73649685b702f4fe497eb7c6ba727
+vendor/lib64/libtime_genoff.so|06df52867790cdbbcc674a3a28d7ad7c8cc161ac
