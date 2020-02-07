@@ -76,6 +76,8 @@ on init
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
+    write /dev/stune/rt/schedtune.boost 0
+    write /dev/stune/rt/schedtune.prefer_idle 1
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -267,7 +269,7 @@ on boot
 
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-3,6-7
-    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
 
     # add a cpuset for the camera daemon
@@ -903,17 +905,13 @@ on property:sys.boot_completed=1
 
     # governor settings
     write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
-
-    write /sys/devices/system/cpu/cpufreq/schedutil/up_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/schedutil/down_rate_limit_us 10000
-    write /sys/devices/system/cpu/cpufreq/schedutil/iowait_boost_enable 0
 
     # Enable input boost configuration
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800"
     write /sys/module/cpu_boost/parameters/dynamic_stune_boost 5
-    write /sys/module/cpu_boost/parameters/input_boost_ms 150
+    write /sys/module/cpu_boost/parameters/input_boost_ms 350
 
     # re-enable thermal & BCL core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
