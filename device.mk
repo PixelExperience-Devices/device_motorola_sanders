@@ -221,10 +221,7 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    ims_ext_common.xml
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -375,14 +372,24 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.0 \
+    android.hardware.radio@1.2 \
+    android.hardware.radio@1.4 \
+    android.hardware.radio.config@1.0 \
+    android.hardware.secure_element@1.0 \
     librmnetctl \
+    libcnefeatureconfig \
     libprotobuf-cpp-full \
     libprotobuf-cpp-lite \
-    libxml2
+    libxml2 \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
 
-#RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.0
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
