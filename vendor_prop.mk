@@ -129,12 +129,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.enable.sglscale=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.display.disable_skip_validate=1 \
-    persist.debug.wfd.enable=1 \
-    vendor.video.disable.ubwc=1 \
-    persist.sys.wfd.virtual=0 \
-    vendor.gralloc.disable_wb_ubwc=1 \
-    persist.sys.wfd.nohdcp=1
+    vendor.display.disable_skip_validate=1
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
