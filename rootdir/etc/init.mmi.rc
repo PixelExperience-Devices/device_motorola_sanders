@@ -270,11 +270,6 @@ service vendor.mmi-boot-sh /vendor/bin/sh /vendor/bin/init.mmi.boot.sh
     oneshot
     disabled
 
-service vendor.charge_only_mode /vendor/bin/charge_only_mode
-    user root
-    group graphics system input
-    disabled
-
 service vendor.thermal-com /vendor/bin/thermal-engine --minimode
     class main
     user root
