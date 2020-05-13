@@ -216,11 +216,7 @@ PRODUCT_COPY_FILES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    ims-ext-common
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -448,3 +444,6 @@ PRODUCT_BOOT_JARS += \
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
+
+# Performance
+include vendor/qcom/common/qti-vendor.mk
