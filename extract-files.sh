@@ -29,6 +29,10 @@ function blob_fixup() {
         sed -i "s/libgui/libwui/" "${2}"
         ;;
 
+    vendor/lib/libmmcamera2_stats_modules.so | vendor/lib/libmmcamera_vstab_module.so)
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
    esac
 }
 
