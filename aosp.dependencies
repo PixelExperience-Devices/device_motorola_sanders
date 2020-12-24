@@ -1,0 +1,66 @@
+[
+  {
+    "repository":  "kernel_motorola_msm8953",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "ten"
+  },
+  {
+    "repository": "device_motorola_msm8953-common",
+    "target_path": "device/motorola/msm8953-common",
+    "branch": "ten"
+  },
+  {
+    "remote": "pixel-devices-blobs",
+    "repository": "vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch": "ten"
+  },
+  {
+    "remote": "pixel-devices-blobs",
+    "repository": "vendor_motorola_msm8953-common",
+    "target_path": "vendor/motorola/msm8953-common",
+    "branch": "ten"
+  },
+  { 
+    "remote": "lineage",
+    "repository": "android_system_qcom",
+    "target_path": "system/qcom",
+    "branch": "lineage-17.1"
+  },
+  {
+    "repository":"LineageOS/android_vendor_nxp_interfaces_opensource_nfc",
+    "target_path":"vendor/nxp/opensource/interfaces/nfc",
+    "branch":"lineage-17.1",
+    "remote":"github"
+  },
+  {
+    "repository":"LineageOS/android_vendor_nxp_opensource_external_libnfc-nci",
+    "target_path":"vendor/nxp/opensource/commonsys/external/libnfc-nci",
+    "branch":"lineage-17.1",
+    "remote":"github"
+  },
+  {
+    "repository":"LineageOS/android_vendor_nxp_opensource_frameworks",
+    "target_path":"vendor/nxp/opensource/commonsys/frameworks",
+    "branch":"lineage-17.1",
+    "remote":"github"
+  },
+  {
+    "repository":"LineageOS/android_vendor_nxp_opensource_packages_apps_Nfc",
+    "target_path":"vendor/nxp/opensource/commonsys/packages/apps/Nfc",
+    "branch":"lineage-17.1",
+    "remote":"github"
+  },
+  {
+    "repository":"LineageOS/android_vendor_nxp_opensource_halimpl",
+    "target_path":"vendor/nxp/opensource/pn5xx/halimpl",
+    "branch":"lineage-17.1-pn5xx",
+    "remote":"github"
+  },
+  {
+    "repository":"LineageOS/android_vendor_nxp_opensource_hidlimpl",
+    "target_path":"vendor/nxp/opensource/pn5xx/hidlimpl",
+    "branch":"lineage-17.1-pn5xx",
+    "remote":"github"
+  }
+]
