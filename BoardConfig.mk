@@ -35,6 +35,9 @@ TARGET_PROVIDES_KEYMASTER := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+
 # NFC
 NXP_CHIP_TYPE := PN551
 

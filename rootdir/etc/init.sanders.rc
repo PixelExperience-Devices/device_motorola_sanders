@@ -44,3 +44,6 @@ on boot
 on post-fs-data
     mkdir /data/fpc 0700 system system
     mkdir /data/.fps 0770 system fingerp
+
+on property:ro.boot.hardware.sku=XT1802
+    insmod /vendor/lib/modules/isdbt.ko
