@@ -22,9 +22,6 @@ DEVICE_PATH := device/motorola/sanders
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
-# Device properties
-$(call inherit-product, $(DEVICE_PATH)/device_prop.mk)
-
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_CONFIG := normal
