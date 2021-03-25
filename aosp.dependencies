@@ -1,0 +1,14 @@
+[
+   {
+      "repository":"device_motorola_msm8953-common",
+      "target_path":"device/motorola/msm8953-common",
+      "branch":"eleven",
+      "remote":"pixel-devices"
+   },
+   {
+      "repository":"vendor_motorola_sanders",
+      "target_path":"vendor/motorola/sanders",
+      "branch":"eleven",
+      "remote":"pixel-devices-blobs"
+   }
+]
